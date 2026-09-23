@@ -1,0 +1,202 @@
+/* ========================================================= TABELA ========================================================= */
+.tabela-clientes {
+    width: 100%;
+}
+
+.tabela-clientes-header,
+.tabela-cliente {
+    display: grid;
+    grid-template-columns: minmax(180px, 1.5fr) minmax(130px, 1fr) minmax(180px, 1.4fr) 100px 160px;
+    align-items: center;
+}
+
+.tabela-clientes-header {
+    min-height: 44px;
+    padding: 0 20px;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+}
+
+.tabela-cliente {
+    min-height: 68px;
+    padding: 0 20px;
+    border-bottom: 1px solid #f0f1f3;
+    font-size: 14px;
+    color: #4b5563;
+    transition: background 0.15s;
+}
+
+.tabela-cliente:last-child {
+    border-bottom: none;
+}
+
+.tabela-cliente:hover {
+    background: #f9fafb;
+}
+
+.tabela-cliente>strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+.tabela-cliente>span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ========================================================= STATUS ========================================================= */
+.status-ativo,
+.status-inativo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 9px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-ativo {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.status-inativo {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+/* ========================================================= AÇÕES ========================================================= */
+.acoes-cliente {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.acoes-cliente button {
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    padding: 7px 10px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.acoes-cliente button:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.acoes-cliente button:last-child {
+    color: #dc2626;
+}
+
+.acoes-cliente button:last-child:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+/* ========================================================= ESTADO VAZIO ========================================================= */
+.clientes-vazio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.clientes-vazio>span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 14px;
+    border-radius: 50%;
+    background: #eff6ff;
+    font-size: 28px;
+}
+
+.clientes-vazio h3 {
+    margin: 0;
+    font-size: 17px;
+    color: #111827;
+}
+
+.clientes-vazio p {
+    margin: 7px 0 20px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.clientes-vazio button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.clientes-vazio button:hover {
+    background: #1d4ed8;
+}
+
+/* ========================================================= RESPONSIVO ========================================================= */
+@media (max-width: 900px) {
+    .tabela-clientes-header {
+        display: none;
+    }
+
+    .tabela-cliente {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 16px 20px;
+    }
+
+    .tabela-cliente>span {
+        white-space: normal;
+    }
+
+    .acoes-cliente {
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .clientes-container {
+        padding: 16px;
+    }
+
+    .clientes-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .btn-novo-cliente {
+        width: 100%;
+    }
+
+    .clientes-filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .clientes-filtros select {
+        width: 100%;
+    }
+}

@@ -1,0 +1,192 @@
+.resumo-venda {
+  width: 100%;
+  min-width: 0;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.resumo-header {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.resumo-header h2 {
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #17213c;
+}
+
+.resumo-header span {
+  font-size: 11px;
+
+  color: #777;
+}
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.resumo-informacoes {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 100%;
+}
+
+.resumo-linha {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding: 0 10px;
+
+  border-right: 1px solid #e5e7eb;
+}
+
+.resumo-linha:first-child {
+  padding-left: 0;
+}
+
+.resumo-linha:last-child {
+  padding-right: 0;
+
+  border-right: none;
+}
+
+.resumo-linha span {
+  font-size: 11px;
+
+  color: #777;
+}
+
+.resumo-linha strong {
+  font-size: 14px;
+
+  color: #17213c;
+}
+
+/* =========================
+   TOTAL
+========================= */
+
+.resumo-total {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 9px 0;
+
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.resumo-total span {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #374151;
+}
+
+.resumo-total strong {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #17213c;
+}
+
+/* =========================
+   AÇÕES
+========================= */
+
+.resumo-acoes {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+}
+
+.resumo-acoes button {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 7px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.resumo-acoes button span {
+  font-size: 10px;
+
+  opacity: 0.7;
+}
+
+/* =========================
+   FINALIZAR
+========================= */
+
+.btn-finalizar {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.btn-finalizar:hover {
+  background: #15803d;
+}
+
+/* =========================
+   CANCELAR
+========================= */
+
+.btn-cancelar {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-cancelar:hover {
+  background: #e5e7eb;
+}

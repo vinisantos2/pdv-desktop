@@ -1,0 +1,514 @@
+.detalhes-fiado {
+  width: 100%;
+  min-height: 100%;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.detalhes-fiado-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.detalhes-fiado-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.detalhes-fiado-header p {
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.detalhes-fiado-voltar {
+  border: none;
+  background: transparent;
+  color: #374151;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.detalhes-fiado-voltar:hover {
+  background: #f1f5f9;
+}
+
+/* =========================
+   RESUMO
+========================= */
+
+.detalhes-fiado-resumo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.detalhes-fiado-resumo-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detalhes-fiado-resumo-card span {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.detalhes-fiado-resumo-card strong {
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.detalhes-fiado-resumo-card .valor-devido {
+  color: #dc2626;
+}
+
+/* =========================
+   PAGAMENTO
+========================= */
+
+.detalhes-fiado-pagamento {
+  margin-bottom: 24px;
+}
+
+.btn-receber-pagamento {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+
+  background: #16a34a;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-receber-pagamento:hover {
+  background: #15803d;
+}
+
+/* =========================
+   FORMULÁRIO PAGAMENTO
+========================= */
+
+.pagamento-fiado {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.pagamento-fiado-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pagamento-fiado-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1f2937;
+}
+
+.pagamento-fiado-header p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.pagamento-fiado-header p strong {
+  color: #1f2937;
+}
+
+.btn-fechar-pagamento {
+  border: none;
+  background: transparent;
+
+  font-size: 26px;
+  line-height: 1;
+
+  color: #64748b;
+  cursor: pointer;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.pagamento-fiado-form {
+  padding-top: 20px;
+}
+
+.campo-pagamento {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  width: 260px;
+}
+
+.campo-pagamento label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.campo-pagamento input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  font-size: 18px;
+
+  outline: none;
+}
+
+.campo-pagamento input:focus {
+  border-color: #2563eb;
+}
+
+/* =========================
+   INFORMAÇÕES PAGAMENTO
+========================= */
+
+.pagamento-fiado-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 18px;
+}
+
+.pagamento-info-item {
+  min-width: 150px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding: 12px 14px;
+
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.pagamento-info-item span {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.pagamento-info-item strong {
+  font-size: 17px;
+  color: #1f2937;
+}
+
+.pagamento-troco {
+  background: #ecfdf5;
+}
+
+.pagamento-troco strong {
+  color: #15803d;
+}
+
+.pagamento-restante {
+  background: #fff7ed;
+}
+
+.pagamento-restante strong {
+  color: #c2410c;
+}
+
+/* =========================
+   BOTÕES PAGAMENTO
+========================= */
+
+.pagamento-fiado-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  margin-top: 20px;
+  padding-top: 18px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-cancelar-pagamento,
+.btn-confirmar-pagamento {
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 7px;
+
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-cancelar-pagamento {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-confirmar-pagamento {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-confirmar-pagamento:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   ÁREA DAS VENDAS
+========================= */
+
+.detalhes-fiado-vendas {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  padding: 24px;
+}
+
+.detalhes-fiado-vendas-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.detalhes-fiado-vendas-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.detalhes-fiado-vendas-header p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+  color: #64748b;
+}
+
+.detalhes-fiado-vendas-header > span {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================
+   LISTA
+========================= */
+
+.detalhes-fiado-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.venda-fiado {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 16px 18px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  transition: 0.2s;
+}
+
+.venda-fiado:hover {
+  background: #f8fafc;
+  border-color: #d1d5db;
+}
+
+/* Data */
+
+.venda-fiado-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  min-width: 160px;
+}
+
+.venda-fiado-info span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.venda-fiado-info strong {
+  font-size: 15px;
+  color: #1f2937;
+}
+
+/* Valor */
+
+.venda-fiado-valor {
+  margin-left: auto;
+
+  font-size: 17px;
+  color: #dc2626;
+}
+
+/* Botão */
+
+.btn-receber-venda {
+  padding: 8px 15px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #16a34a;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-receber-venda:hover {
+  background: #15803d;
+}
+
+/* =========================
+   ESTADO VAZIO
+========================= */
+
+.detalhes-fiado-vazio {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  color: #64748b;
+}
+
+.detalhes-fiado-vazio h2 {
+  margin: 0;
+  color: #374151;
+}
+
+.detalhes-fiado-vazio button {
+  border: none;
+
+  background: #2563eb;
+  color: white;
+
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 800px) {
+  .detalhes-fiado {
+    padding: 20px;
+  }
+
+  .detalhes-fiado-resumo {
+    grid-template-columns: 1fr;
+  }
+
+  .detalhes-fiado-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .venda-fiado {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
+  .detalhes-fiado {
+    padding: 15px;
+  }
+
+  .detalhes-fiado-vendas {
+    padding: 16px;
+  }
+
+  .venda-fiado {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .venda-fiado-valor {
+    margin-left: 0;
+  }
+
+  .btn-receber-venda {
+    width: 100%;
+  }
+
+  .campo-pagamento {
+    width: 100%;
+  }
+
+  .pagamento-fiado-info {
+    flex-direction: column;
+  }
+
+  .pagamento-info-item {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .pagamento-fiado-acoes {
+    flex-direction: column;
+  }
+
+  .btn-cancelar-pagamento,
+  .btn-confirmar-pagamento {
+    width: 100%;
+  }
+}

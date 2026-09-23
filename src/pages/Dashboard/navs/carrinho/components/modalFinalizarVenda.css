@@ -1,0 +1,684 @@
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(17, 24, 39, 0.58);
+
+  backdrop-filter: blur(2px);
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-finalizar {
+  width: 100%;
+  max-width: 900px;
+
+  max-height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.18);
+
+  overflow: hidden;
+
+  animation: abrirModal 0.18s ease-out;
+}
+
+@keyframes abrirModal {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.modal-header span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.modal-fechar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #6b7280;
+
+  font-size: 25px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: background 0.2s, color 0.2s;
+}
+
+.modal-fechar:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.modal-conteudo {
+  display: grid;
+
+  grid-template-columns: 1.15fr 0.85fr;
+
+  gap: 24px;
+
+  padding: 24px;
+
+  overflow-y: auto;
+}
+
+/* =========================================================
+   SEÇÃO
+========================================================= */
+
+.itens-venda,
+.pagamento {
+  min-width: 0;
+}
+
+.secao-titulo {
+  margin-bottom: 16px;
+}
+
+.secao-titulo h3 {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.secao-titulo span {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* =========================================================
+   LISTA DE ITENS
+========================================================= */
+
+.lista-itens {
+  display: flex;
+  flex-direction: column;
+
+  max-height: 280px;
+
+  overflow-y: auto;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.item-venda {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 13px 14px;
+
+  border-bottom: 1px solid #f0f1f3;
+}
+
+.item-venda:last-child {
+  border-bottom: none;
+}
+
+.item-info {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.item-info strong {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #111827;
+}
+
+.item-info span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.item-subtotal {
+  flex-shrink: 0;
+
+  font-size: 13px;
+  color: #111827;
+}
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.total-venda {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 16px;
+  padding: 16px;
+
+  border-radius: 10px;
+
+  background: #f9fafb;
+}
+
+.total-venda span {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #4b5563;
+}
+
+.total-venda strong {
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+/* =========================================================
+   PAGAMENTO EM DINHEIRO
+========================================================= */
+
+.pagamento-dinheiro {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 16px;
+}
+
+.campo-valor-recebido {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.campo-valor-recebido label {
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #374151;
+}
+
+.input-valor {
+  display: flex;
+  align-items: center;
+
+  height: 42px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+.input-valor span {
+  padding-left: 12px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #6b7280;
+}
+
+.input-valor input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 10px;
+
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+  color: #111827;
+}
+
+.input-valor:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.troco {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  background: #f0fdf4;
+}
+
+.troco span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.troco strong {
+  margin-top: 4px;
+
+  font-size: 17px;
+
+  color: #15803d;
+}
+
+/* =========================================================
+   OPÇÕES DE PAGAMENTO
+========================================================= */
+
+.opcoes-pagamento {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.opcao-pagamento {
+  position: relative;
+
+  display: block;
+
+  padding: 12px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.opcao-pagamento:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.opcao-pagamento.selecionada {
+  border-color: #2563eb;
+
+  background: #eff6ff;
+
+  box-shadow:
+    0 0 0 1px #2563eb;
+}
+
+.opcao-pagamento input {
+  position: absolute;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.opcao-conteudo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.opcao-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #f3f4f6;
+
+  font-size: 18px;
+}
+
+.opcao-pagamento.selecionada .opcao-icon {
+  background: #dbeafe;
+}
+
+.opcao-conteudo div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.opcao-conteudo strong {
+  font-size: 13px;
+  color: #111827;
+}
+
+.opcao-conteudo small {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* =========================================================
+   CLIENTE FIADO
+========================================================= */
+
+.cliente-fiado {
+  margin-top: 16px;
+
+  padding: 16px;
+
+  border: 1px solid #dbeafe;
+  border-radius: 10px;
+
+  background: #eff6ff;
+}
+
+.cliente-fiado-titulo {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 14px;
+}
+
+.cliente-fiado-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #dbeafe;
+
+  font-size: 17px;
+}
+
+.cliente-fiado-titulo div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.cliente-fiado-titulo strong {
+  font-size: 13px;
+  color: #1e3a8a;
+}
+
+.cliente-fiado-titulo span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.cliente-fiado > label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #374151;
+}
+
+.cliente-fiado select {
+  width: 100%;
+  height: 44px;
+
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-size: 13px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.cliente-fiado select:hover {
+  border-color: #93c5fd;
+}
+
+.cliente-fiado select:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 16px 24px;
+
+  border-top: 1px solid #e5e7eb;
+
+  background: #ffffff;
+}
+
+.modal-footer button {
+  height: 40px;
+
+  padding: 0 18px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.1s;
+}
+
+.btn-cancelar {
+  border: 1px solid #d1d5db;
+
+  background: #ffffff;
+
+  color: #374151;
+}
+
+.btn-cancelar:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.btn-confirmar {
+  border: none;
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+.btn-confirmar:hover {
+  background: #1d4ed8;
+}
+
+.btn-confirmar:active,
+.btn-cancelar:active {
+  transform: scale(0.98);
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 750px) {
+  .modal-overlay {
+    padding: 12px;
+  }
+
+  .modal-finalizar {
+    max-height: 94vh;
+  }
+
+  .modal-conteudo {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 18px;
+  }
+
+  .lista-itens {
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 500px) {
+  .modal-header {
+    padding: 16px 18px;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .modal-conteudo {
+    padding: 16px;
+  }
+
+  .opcoes-pagamento {
+    grid-template-columns: 1fr;
+  }
+
+  .pagamento-dinheiro {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-footer {
+    flex-direction: column-reverse;
+
+    padding: 14px 16px;
+  }
+
+  .modal-footer button {
+    width: 100%;
+  }
+}

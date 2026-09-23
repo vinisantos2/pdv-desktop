@@ -1,0 +1,79 @@
+.filtro-fiados {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filtro-fiados-input {
+  width: 100%;
+  max-width: 450px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+
+  padding: 0 12px;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filtro-fiados-input:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.filtro-fiados-input span {
+  font-size: 18px;
+  margin-right: 8px;
+  color: #666;
+}
+
+.filtro-fiados-input input {
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+  color: #333;
+
+  background: transparent;
+}
+
+.filtro-fiados-input input::placeholder {
+  color: #999;
+}
+
+.filtro-fiados-input button {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  color: #888;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filtro-fiados-input button:hover {
+  background-color: #f1f1f1;
+  color: #333;
+}

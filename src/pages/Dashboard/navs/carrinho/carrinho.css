@@ -1,0 +1,46 @@
+.carrinho-page {
+  width: 100%;
+  min-height: 100%;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  background: #f5f6f8;
+}
+
+/* =========================
+   BUSCA + RESUMO
+========================= */
+
+.carrinho-top {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) 360px;
+
+  gap: 5px;
+
+  margin-bottom: 18px;
+
+  align-items: stretch;
+}
+
+/* =========================
+   TABELA
+========================= */
+
+.carrinho-main {
+  width: 100%;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+  .carrinho-top {
+    grid-template-columns: 1fr;
+  }
+}

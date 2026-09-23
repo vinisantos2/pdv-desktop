@@ -1,0 +1,275 @@
+/* =========================
+   BUSCA
+========================= */
+
+.produto-busca {
+  width: 100%;
+  min-width: 0;
+}
+
+.produto-busca-esquerda {
+  width: 100%;
+  min-width: 0;
+  display: grid;
+
+  grid-template-columns: 200px minmax(0, 1fr);
+
+  column-gap: 18px;
+  row-gap: 14px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d9dde5;
+  border-radius: 10px;
+}
+
+.campo-descricao {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.produto-imagem {
+
+  min-width: 0;
+  min-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #d9dde5;
+  border-radius: 8px;
+
+  background: #eef0f3;
+
+  color: #888;
+}
+
+.produto-imagem span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.produto-imagem small {
+  margin-top: 5px;
+
+  font-size: 13px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo-busca {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.campo-busca label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #333;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-wrapper {
+  display: flex;
+
+  width: 100%;
+  min-width: 0;
+
+  height: 42px;
+}
+
+.input-wrapper input {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cfd5df;
+  border-right: 0;
+
+  border-radius: 7px 0 0 7px;
+
+  background: #ffffff;
+
+  color: #222;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border-color: #2878d8;
+}
+
+.input-wrapper button {
+  flex: 0 0 68px;
+
+  width: 68px;
+
+  border: 1px solid #cfd5df;
+
+  border-radius: 0 7px 7px 0;
+
+  background: #39506a;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: background 0.15s;
+}
+
+.input-wrapper button:hover {
+  background: #2f4359;
+}
+
+
+/* =========================
+   RESULTADOS
+========================= */
+
+.produto-resultados {
+  position: absolute;
+
+  top: calc(100% + 6px);
+
+  left: 0;
+  right: 0;
+
+  z-index: 100;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #d5dae3;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   ITEM
+========================= */
+
+.produto-resultado {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 12px;
+
+  box-sizing: border-box;
+
+  border: 0;
+  border-bottom: 1px solid #edf0f4;
+
+  background: #ffffff;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background 0.12s;
+}
+
+.produto-resultado:last-child {
+  border-bottom: 0;
+}
+
+.produto-resultado:hover {
+  background: #f4f7fb;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
+
+.produto-resultado-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.produto-resultado-info strong {
+  overflow: hidden;
+
+  color: #222;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.produto-resultado-info span {
+  color: #7a818c;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   PREÇO
+========================= */
+
+.produto-resultado-direita {
+  flex-shrink: 0;
+
+  margin-left: 15px;
+}
+
+.produto-preco {
+  color: #2878d8;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}

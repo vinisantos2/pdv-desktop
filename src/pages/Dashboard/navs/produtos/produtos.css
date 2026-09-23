@@ -1,0 +1,103 @@
+.produtos {
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  padding: 24px;
+
+  overflow: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.produtos-header {
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.produtos-header h1 {
+  margin: 0;
+
+  font-size: 26px;
+  font-weight: 600;
+
+  color: #1f2937;
+}
+
+.produtos-header p {
+  margin: 5px 0 0;
+
+  font-size: 14px;
+
+  color: #6b7280;
+}
+
+
+/* =========================
+   NOVO PRODUTO
+========================= */
+
+.btn-novo-produto {
+  height: 38px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #2563eb;
+
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.15s;
+}
+
+.btn-novo-produto:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.produtos-conteudo {
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 20px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 600px) {
+
+  .produtos {
+    padding: 16px;
+  }
+
+  .produtos-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 16px;
+  }
+
+  .btn-novo-produto {
+    width: 100%;
+  }
+}

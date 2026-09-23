@@ -1,0 +1,24 @@
+.relatorios-container {
+  width: 100%;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.relatorios-header {
+  margin-bottom: 24px;
+}
+
+.relatorios-header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.relatorios-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}

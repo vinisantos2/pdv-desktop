@@ -1,0 +1,353 @@
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.fiados-container {
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.fiados-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.fiados-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.fiados-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   RESUMO
+========================================================= */
+
+.resumo-fiados {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.resumo-fiado-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.resumo-fiado-label {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.resumo-fiado-card strong {
+  color: #111827;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FILTROS
+========================================================= */
+
+.fiados-filtros {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.fiados-filtros input {
+  width: 100%;
+  max-width: 450px;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.fiados-filtros input::placeholder {
+  color: #9ca3af;
+}
+
+.fiados-filtros input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================================================
+   CARD PRINCIPAL
+========================================================= */
+
+.fiados-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.fiados-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.fiados-card-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.fiados-card-header span {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+
+/* =========================================================
+   TABELA
+========================================================= */
+
+.tabela-fiados {
+  width: 100%;
+}
+
+.tabela-fiados-header,
+.tabela-fiado {
+  display: grid;
+  grid-template-columns:
+    minmax(200px, 1.5fr)
+    minmax(140px, 1fr)
+    100px
+    minmax(140px, 1fr)
+    140px;
+
+  align-items: center;
+  gap: 16px;
+  padding: 0 22px;
+}
+
+
+/* =========================================================
+   CABEÇALHO DA TABELA
+========================================================= */
+
+.tabela-fiados-header {
+  min-height: 46px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tabela-fiados-header span {
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   LINHA
+========================================================= */
+
+.tabela-fiado {
+  min-height: 68px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+}
+
+.tabela-fiado:last-child {
+  border-bottom: none;
+}
+
+.tabela-fiado:hover {
+  background: #fafafa;
+}
+
+.tabela-fiado strong {
+  color: #1f2937;
+  font-size: 14px;
+}
+
+.tabela-fiado > span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   VALOR
+========================================================= */
+
+.valor-fiado {
+  color: #dc2626 !important;
+  font-size: 15px !important;
+}
+
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.acoes-fiado {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.acoes-fiado button {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.acoes-fiado button:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+
+/* =========================================================
+   ESTADO VAZIO / CARREGANDO
+========================================================= */
+
+.fiados-vazio {
+  min-height: 260px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fiados-vazio span {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.fiados-vazio h3 {
+  margin: 0 0 6px;
+  color: #374151;
+  font-size: 17px;
+}
+
+.fiados-vazio p {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 1000px) {
+  .resumo-fiados {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tabela-fiados-header,
+  .tabela-fiado {
+    grid-template-columns:
+      minmax(180px, 1.5fr)
+      minmax(120px, 1fr)
+      80px
+      minmax(130px, 1fr)
+      120px;
+
+    padding: 0 16px;
+    gap: 12px;
+  }
+}
+
+
+@media (max-width: 750px) {
+  .fiados-container {
+    padding: 16px;
+  }
+
+  .resumo-fiados {
+    grid-template-columns: 1fr;
+  }
+
+  .fiados-card {
+    overflow-x: auto;
+  }
+
+  .tabela-fiados {
+    min-width: 750px;
+  }
+
+  .tabela-fiados-header,
+  .tabela-fiado {
+    padding: 0 16px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .fiados-header h1 {
+    font-size: 24px;
+  }
+
+  .fiados-header p {
+    font-size: 13px;
+  }
+
+  .resumo-fiado-card {
+    padding: 16px;
+  }
+
+  .resumo-fiado-card strong {
+    font-size: 21px;
+  }
+
+  .fiados-filtros input {
+    max-width: none;
+  }
+}

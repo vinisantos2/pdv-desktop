@@ -1,0 +1,311 @@
+.produto-formulario {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 24px;
+
+  background: #fff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.form-header {
+  margin-bottom: 24px;
+}
+
+.form-header h2 {
+  margin: 0;
+
+  font-size: 19px;
+  font-weight: 600;
+
+  color: #111827;
+}
+
+.form-header p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: #6b7280;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.produto-form-conteudo {
+  display: grid;
+
+  grid-template-columns: 190px minmax(0, 1fr);
+
+  gap: 28px;
+
+  align-items: start;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.produto-imagem-area {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.produto-imagem-area > label:first-child {
+  align-self: flex-start;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #374151;
+}
+
+
+/* Preview grande */
+
+.imagem-preview {
+  width: 180px;
+  height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+
+  background: #f8fafc;
+}
+
+.imagem-preview img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.imagem-placeholder {
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+
+/* Botão imagem */
+
+.btn-imagem {
+  width: 180px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  background: #fff;
+
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.15s;
+}
+
+.btn-imagem:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+
+/* =========================
+   DADOS
+========================= */
+
+.produto-dados {
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+
+  min-width: 0;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 13px;
+  font-weight: 500;
+
+  color: #374151;
+}
+
+.campo input {
+  width: 100%;
+  height: 40px;
+
+  box-sizing: border-box;
+
+  padding: 0 11px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #1f2937;
+
+  font-size: 14px;
+
+  transition: 0.15s;
+}
+
+.campo input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 2px rgb(37 99 235 / 10%);
+}
+
+
+/* =========================
+   PREÇO / ESTOQUE
+========================= */
+
+.produto-dados-linha {
+  display: flex;
+
+  gap: 16px;
+}
+
+.campo-preco {
+  width: 160px;
+}
+
+.campo-estoque {
+  width: 130px;
+}
+
+
+/* =========================
+   AÇÕES
+========================= */
+
+.form-acoes {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  margin-top: 24px;
+  padding-top: 18px;
+
+  border-top: 1px solid #f1f5f9;
+}
+
+.form-acoes button {
+  height: 38px;
+
+  padding: 0 16px;
+
+  border-radius: 6px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+
+/* Limpar */
+
+.btn-limpar {
+  border: 1px solid #d1d5db;
+
+  background: #fff;
+
+  color: #374151;
+}
+
+.btn-limpar:hover {
+  background: #f9fafb;
+}
+
+
+/* Salvar */
+
+.btn-salvar {
+  border: none;
+
+  background: #2563eb;
+
+  color: #fff;
+}
+
+.btn-salvar:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 650px) {
+
+  .produto-form-conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-imagem-area {
+    align-items: flex-start;
+  }
+
+  .produto-dados-linha {
+    flex-direction: column;
+  }
+
+  .campo-preco,
+  .campo-estoque {
+    width: 100%;
+  }
+
+  .form-acoes {
+    justify-content: flex-start;
+  }
+}

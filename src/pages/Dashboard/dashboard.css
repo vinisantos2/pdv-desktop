@@ -1,0 +1,229 @@
+.main-layout {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+
+  background: #f5f6f8;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #111827;
+  color: white;
+}
+
+
+/* HEADER */
+
+.sidebar-header {
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid #1f2937;
+}
+
+.sidebar-logo {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.sidebar-header strong {
+  display: block;
+
+  font-size: 15px;
+}
+
+.sidebar-header span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.sidebar-menu {
+  flex: 1;
+
+  padding: 20px 12px;
+}
+
+.menu-item {
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 14px;
+
+  margin-bottom: 5px;
+
+  border-radius: 8px;
+
+  color: #9ca3af;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.menu-item span {
+  width: 22px;
+
+  font-size: 17px;
+}
+
+.menu-item:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.menu-item.active {
+  background: #2563eb;
+  color: white;
+}
+
+
+/* =========================
+   USUÁRIO
+========================= */
+
+.sidebar-bottom {
+  padding: 15px;
+
+  border-top: 1px solid #1f2937;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #374151;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.user-data {
+  min-width: 0;
+}
+
+.user-data strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: white;
+
+  font-size: 13px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-data span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   SAIR
+========================= */
+
+.logout-button {
+  width: 100%;
+  height: 40px;
+
+  border: 1px solid #374151;
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #d1d5db;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.logout-button:hover {
+  background: #1f2937;
+  color: white;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.main-content {
+  flex: 1;
+
+  min-width: 0;
+  height: 100vh;
+
+  overflow: auto;
+
+  background: #f5f6f8;
+}

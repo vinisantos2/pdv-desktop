@@ -1,0 +1,279 @@
+/* =========================
+   CONTAINER
+========================= */
+
+.tabela-container {
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: white;
+
+  border: 1px solid #d9dde5;
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.tabela-header {
+  min-height: 58px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #d9dde5;
+}
+
+.tabela-header h2 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #17213c;
+}
+
+.tabela-header span {
+  display: block;
+
+  margin-top: 3px;
+
+  font-size: 12px;
+
+  color: #777;
+}
+
+
+/* =========================
+   BOTÃO LIMPAR
+========================= */
+
+.btn-limpar-tabela {
+  padding: 8px 13px;
+
+  border: 1px solid #dc3545;
+  border-radius: 6px;
+
+  background: white;
+
+  color: #dc3545;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.btn-limpar-tabela:hover {
+  background: #fff5f5;
+}
+
+.btn-limpar-tabela:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.tabela-scroll {
+  flex: 1;
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.tabela-venda {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.tabela-venda th {
+  height: 42px;
+
+  padding: 0 10px;
+
+  background: #f1f3f6;
+
+  border-bottom: 1px solid #d9dde5;
+
+  color: #555;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   CÉLULAS
+========================= */
+
+.tabela-venda td {
+  height: 58px;
+
+  padding: 0 10px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  color: #333;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+.tabela-venda tbody tr:hover {
+  background: #fafbfc;
+}
+
+
+/* =========================
+   COLUNA #
+========================= */
+
+.tabela-venda th:first-child,
+.tabela-venda td:first-child {
+  width: 40px;
+
+  text-align: center;
+}
+
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.descricao-produto {
+  min-width: 180px;
+
+  font-weight: 600;
+
+  color: #222 !important;
+}
+
+
+/* =========================
+   QUANTIDADE
+========================= */
+
+.quantidade-tabela {
+  display: flex;
+  align-items: center;
+}
+
+.quantidade-tabela button,
+.quantidade-tabela span {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d0d5dd;
+  background: rgb(21, 20, 20);
+  font-weight: 700;
+}
+
+.quantidade-tabela button {
+  cursor: pointer;
+}
+
+.quantidade-tabela button:hover {
+  background: #2170c0;
+}
+
+.quantidade-tabela button:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.quantidade-tabela button:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.quantidade-tabela span {
+  border-left: 0;
+  border-right: 0;
+  color: white;
+
+}
+
+
+/* =========================
+   SUBTOTAL
+========================= */
+
+.subtotal {
+  font-weight: 700;
+
+  color: #17213c !important;
+}
+
+
+/* =========================
+   REMOVER
+========================= */
+
+.btn-remover-item {
+  padding: 6px 10px;
+
+  border: 1px solid #dc3545;
+  border-radius: 5px;
+
+  background: white;
+
+  color: #dc3545;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.btn-remover-item:hover {
+  background: #dc3545;
+
+  color: white;
+}
+
+
+/* =========================
+   TABELA VAZIA
+========================= */
+
+.tabela-vazia {
+  height: 350px !important;
+
+  text-align: center;
+
+  color: #8a919c !important;
+
+  font-size: 14px !important;
+}

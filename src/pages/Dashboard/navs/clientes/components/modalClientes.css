@@ -1,0 +1,249 @@
+/* =========================
+   MODAL HEADER
+========================= */
+
+.cliente-modal-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.cliente-modal-header h2 {
+    margin: 0;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.cliente-modal-header span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.cliente-modal-header button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #6b7280;
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: background 0.2s, color 0.2s;
+}
+
+.cliente-modal-header button:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.cliente-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+    padding: 20px;
+}
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.campo label {
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #374151;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    color: #111827;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input {
+    height: 44px;
+}
+
+.campo textarea {
+    resize: vertical;
+
+    min-height: 80px;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #9ca3af;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================
+   MODAL FOOTER
+========================= */
+
+.cliente-modal-footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 16px 20px;
+
+    border-top: 1px solid #e5e7eb;
+
+    background: #f9fafb;
+}
+
+.cliente-modal-footer button {
+    height: 40px;
+
+    padding: 0 16px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.cliente-modal-footer .btn-cancelar {
+    border: 1px solid #d1d5db;
+
+    background: #ffffff;
+
+    color: #374151;
+}
+
+.cliente-modal-footer .btn-cancelar:hover {
+    background: #f3f4f6;
+}
+
+.cliente-modal-footer .btn-salvar {
+    border: none;
+
+    background: #2563eb;
+
+    color: #ffffff;
+}
+
+.cliente-modal-footer .btn-salvar:hover {
+    background: #1d4ed8;
+}
+
+
+.campo-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.campo-status>div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.campo-status label {
+    font-weight: 600;
+}
+
+.campo-status span {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* SWITCH */
+.switch {
+    width: 46px;
+    height: 24px;
+    padding: 3px;
+    border: none;
+    border-radius: 20px;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.switch span {
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    transition: 0.2s;
+}
+
+.switch.ativo {
+    background: #22c55e;
+}
+
+.switch.ativo span {
+    transform: translateX(22px);
+}
+
