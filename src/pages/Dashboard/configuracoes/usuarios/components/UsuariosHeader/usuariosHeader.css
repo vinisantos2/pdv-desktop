@@ -1,0 +1,43 @@
+.usuarios-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.usuarios-header h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.usuarios-header p {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.btn-novo-usuario {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 16px;
+
+  background: var(--bg-button);
+  color: var(--text-button);
+
+  font-weight: 600;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-novo-usuario:hover {
+  opacity: 0.9;
+}
+
+.btn-novo-usuario span {
+  font-size: 20px;
+  line-height: 1;
+}

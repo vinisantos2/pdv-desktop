@@ -1,0 +1,39 @@
+.rodape {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px 20px;
+
+  background-color: #111827;
+  color: #fff;
+
+  font-size: 12px;
+}
+
+.rodape-conteudo {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+  flex-wrap: wrap;
+
+  text-align: center;
+}
+
+.rodape-separador {
+  color: #9ca3af;
+}
+
+@media (max-width: 600px) {
+  .rodape {
+    padding: 12px 10px;
+  }
+
+  .rodape-conteudo {
+    gap: 5px;
+    font-size: 11px;
+  }
+}

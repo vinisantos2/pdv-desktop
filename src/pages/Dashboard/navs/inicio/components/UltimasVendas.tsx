@@ -6,9 +6,7 @@ interface UltimasVendasProps {
 }
 
 export default function UltimasVendas({ vendas }: UltimasVendasProps) {
-  const vendasFitradas = vendas.filter(
-    (item) => item.formaPagamento !== "fiado",
-  );
+ 
   return (
     <div className="dashboard-panel">
       <div className="panel-header">
@@ -26,7 +24,7 @@ export default function UltimasVendas({ vendas }: UltimasVendasProps) {
         </div>
       ) : (
         <div className="vendas-lista">
-          {vendasFitradas.map((venda) => (
+          {vendas.map((venda) => (
             <div className="venda-item" key={venda.id}>
               <strong>{venda.data.toDate().toLocaleString("pt-BR")}</strong>
 

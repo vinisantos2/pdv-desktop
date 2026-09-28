@@ -1,0 +1,60 @@
+/* =========================
+   HEADER
+========================= */
+
+.sidebar-header {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+    padding: 0 20px;
+
+    flex-shrink: 0;
+
+    border-bottom: 1px solid #1f2937;
+}
+
+
+/* LOGO */
+
+.sidebar-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+
+/* INFORMAÇÕES */
+
+.sidebar-header-info strong {
+    display: block;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+.sidebar-header-info span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+}
+

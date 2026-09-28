@@ -1,0 +1,37 @@
+.usuarios-toolbar {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.usuarios-busca {
+  width: 340px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 12px;
+
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+
+.usuarios-busca span {
+  font-size: 19px;
+  color: var(--text-secondary);
+}
+
+.usuarios-busca input {
+  width: 100%;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+  color: inherit;
+}
+
+.usuarios-busca:focus-within {
+  border-color: var(--primary);
+}

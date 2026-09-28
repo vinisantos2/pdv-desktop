@@ -1,0 +1,10 @@
+.usuarios-page {
+  padding: 28px;
+}
+
+.usuarios-container {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  overflow: hidden;
+}

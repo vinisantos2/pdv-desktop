@@ -1,0 +1,47 @@
+.usuarios-resumo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  margin-bottom: 20px;
+}
+
+.usuario-card {
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  border-radius: 10px;
+
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.usuario-card-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.usuario-card strong {
+  font-size: 25px;
+}
+
+.usuario-card-icon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--accent-bg);
+
+  font-size: 19px;
+}

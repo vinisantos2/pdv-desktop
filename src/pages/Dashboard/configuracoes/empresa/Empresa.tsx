@@ -1,4 +1,4 @@
-import "./configuracoes.css";
+import "./empresa.css";
 import { useEffect, useRef, useState } from "react";
 
 
@@ -7,7 +7,7 @@ import { atualizarEmpresa, buscarEmpresa } from "../../../../services/EmpresaSer
 import type { Empresa } from "../../../../types/Empresa";
 import { uploadImagem } from "../../../../services/imagemService/uploadImagemService";
 
-export default function Configuracoes() {
+export default function Empresa() {
   const { empresa } = useAuth();
 
   const [nome, setNome] = useState("");

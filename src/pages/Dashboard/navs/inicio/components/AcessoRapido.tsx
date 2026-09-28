@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ROTAS } from "../../../../../constanst/rotas";
 import "./acessoRapido.css";
+import { useAuth } from "../../../../../contexts/AuthContext";
 const acoes = [
   {
     icone: "🛒",
@@ -30,6 +31,7 @@ const acoes = [
 
 export default function AcessoRapido() {
   const navigate = useNavigate();
+  const { usuario } = useAuth();
   return (
     <section className="dashboard-section">
       <div className="section-header">
@@ -38,19 +40,24 @@ export default function AcessoRapido() {
         <p>Principais ações do sistema</p>
       </div>
       <div className="action-grid">
-        {acoes.map((acao) => (
-          <button
-            className="action-card"
-            onClick={() => navigate(acao.rota)}
-            key={acao.titulo}
-          >
-            <span className="action-icon">{acao.icone}</span>
+        {acoes.map((acao) => {
+          if (usuario?.perfil === "funcionario" && acao.titulo === "Produtos")
+            return;
 
-            <strong>{acao.titulo}</strong>
+          return (
+            <button
+              className="action-card"
+              onClick={() => navigate(acao.rota)}
+              key={acao.titulo}
+            >
+              <span className="action-icon">{acao.icone}</span>
 
-            <small>{acao.descricao}</small>
-          </button>
-        ))}
+              <strong>{acao.titulo}</strong>
+
+              <small>{acao.descricao}</small>
+            </button>
+          );
+        })}
       </div>
     </section>
   );

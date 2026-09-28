@@ -1,0 +1,349 @@
+/* =========================
+   OVERLAY
+========================= */
+
+.modal-usuario-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.45);
+
+  backdrop-filter: blur(2px);
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-usuario {
+  width: 100%;
+  max-width: 430px;
+
+  max-height: calc(100vh - 40px);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: var(--card-bg, #ffffff);
+
+  border: 1px solid var(--border, #e5e7eb);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.18),
+    0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.modal-usuario-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  border-bottom: 1px solid var(--border, #e5e7eb);
+}
+
+.modal-usuario-header h2 {
+  margin: 0;
+
+  color: var(--text, #111827);
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.modal-usuario-header p {
+  margin: 5px 0 0;
+
+  color: var(--text-secondary, #6b7280);
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+/* =========================
+   BOTÃO FECHAR
+========================= */
+
+.modal-usuario-fechar {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 15px;
+
+  border: 0;
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: var(--text-secondary, #6b7280);
+
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.modal-usuario-fechar:hover {
+  background: var(--accent-bg, #f3f4f6);
+
+  color: var(--text, #111827);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.modal-usuario form {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 0;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+.modal-usuario-body {
+  padding: 20px;
+
+  overflow-y: auto;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.modal-usuario-campo {
+  margin-bottom: 16px;
+}
+
+.modal-usuario-campo:last-child {
+  margin-bottom: 0;
+}
+
+.modal-usuario-campo label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--text, #111827);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* INPUTS */
+
+.modal-usuario-campo input,
+.modal-usuario-campo select {
+  width: 100%;
+  height: 40px;
+
+  box-sizing: border-box;
+
+  padding: 0 11px;
+
+  border: 1px solid var(--border, #d1d5db);
+
+  border-radius: 7px;
+
+  outline: none;
+
+  background: var(--card-bg, #ffffff);
+
+  color: var(--text, #111827);
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.modal-usuario-campo input::placeholder {
+  color: #9ca3af;
+}
+
+.modal-usuario-campo input:focus,
+.modal-usuario-campo select:focus {
+  border-color: var(--primary, #2563eb);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================
+   AJUDA
+========================= */
+
+.modal-usuario-ajuda {
+  display: block;
+
+  margin-top: 6px;
+
+  color: var(--text-secondary, #6b7280);
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.modal-usuario-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 16px 20px;
+
+  border-top: 1px solid var(--border, #e5e7eb);
+
+  background: var(--card-bg, #ffffff);
+}
+
+
+/* =========================
+   BOTÃO CANCELAR
+========================= */
+
+.btn-modal-cancelar {
+  height: 38px;
+
+  padding: 0 15px;
+
+  border: 1px solid var(--border, #d1d5db);
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: var(--text, #374151);
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.btn-modal-cancelar:hover {
+  background: var(--accent-bg, #f3f4f6);
+}
+
+
+/* =========================
+   BOTÃO SALVAR
+========================= */
+
+.btn-modal-salvar {
+  height: 38px;
+
+  padding: 0 16px;
+
+  border: 0;
+
+  border-radius: 7px;
+
+  background: var(--primary, #2563eb);
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn-modal-salvar:hover {
+  background: #1d4ed8;
+
+  box-shadow:
+    0 4px 10px rgba(37, 99, 235, 0.20);
+}
+
+.btn-modal-salvar:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 500px) {
+
+  .modal-usuario-overlay {
+    padding: 15px;
+  }
+
+  .modal-usuario {
+    max-height: calc(100vh - 30px);
+
+    border-radius: 12px;
+  }
+
+  .modal-usuario-header,
+  .modal-usuario-body {
+    padding: 18px;
+  }
+
+  .modal-usuario-footer {
+    padding: 14px 18px;
+  }
+
+}

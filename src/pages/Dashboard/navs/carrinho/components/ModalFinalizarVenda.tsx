@@ -7,6 +7,7 @@ import type { Cliente } from "../../../../../types/Cliente";
 import { listarClientes } from "../../../../../services/ClienteService";
 import Loading from "../../../../../components/loading/Loading";
 import type { Venda } from "../../../../../types/Venda";
+import { Timestamp } from "firebase/firestore";
 
 interface ModalFinalizarVendaProps {
   aberto: boolean;
@@ -88,6 +89,8 @@ export default function ModalFinalizarVenda({
     }
 
     setCarregando(true);
+    const dataPagamento =
+      formaPagamento !== "fiado" ? Timestamp.now() : undefined;
 
     try {
       const venda = await criarVenda(
@@ -97,6 +100,7 @@ export default function ModalFinalizarVenda({
         itens,
         formaPagamento === "fiado" ? clienteId : "",
         formaPagamento === "fiado" ? clienteNome : "",
+        dataPagamento,
       );
 
       if (imprimir) {

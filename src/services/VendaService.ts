@@ -28,6 +28,7 @@ export async function criarVenda(
   itensVenda: ItemVenda[],
   clienteId?: string,
   clienteNome?: string,
+  dataPagamento?: Timestamp,
 ): Promise<Venda> {
   if (itensVenda.length === 0) {
     throw new Error("Nenhum item na venda.");
@@ -45,6 +46,7 @@ export async function criarVenda(
     total,
     formaPagamento,
     itens: itensVenda,
+    dataPagamento,
     statusPagamento: formaPagamento === "fiado" ? "pendente" : "pago",
     ...(clienteId && {
       clienteId,
@@ -164,7 +166,12 @@ export async function buscarUltimasVendas(
 ): Promise<Venda[]> {
   const vendasRef = collection(db, "empresas", uid, "vendas");
 
-  const q = query(vendasRef, orderBy("data", "desc"), limit(quantidade));
+  const q = query(
+    vendasRef,
+    where("statusPagamento", "==", "pago"),
+    orderBy("dataPagamento", "desc"),
+    limit(quantidade),
+  );
 
   const snapshot = await getDocs(q);
 

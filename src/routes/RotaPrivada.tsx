@@ -1,20 +1,26 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { ROTAS } from "../constanst/rotas";
 import { useAuth } from "../contexts/AuthContext";
+import Loading from "../components/loading/Loading";
 
-export default function RotaPrivada() {
+interface RotaPrivadaProps {
+  apenasAdmin?: boolean;
+}
+
+export default function RotaPrivada({ apenasAdmin = false }: RotaPrivadaProps) {
   const { usuario, carregando } = useAuth();
 
-  // Enquanto verifica o Firebase
   if (carregando) {
-    return <div>Carregando...</div>;
+    return <Loading />;
   }
 
-  // Não autenticado
   if (!usuario) {
     return <Navigate to={ROTAS.LOGIN} replace />;
   }
 
-  // Autenticado
+  if (apenasAdmin && usuario.perfil !== "admin") {
+    return <Navigate to={ROTAS.DASHBOARD.INDEX} replace />;
+  }
+
   return <Outlet />;
 }

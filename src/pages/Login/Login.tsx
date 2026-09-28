@@ -5,6 +5,7 @@ import { useState, type FormEvent } from "react";
 import { fazerLogin } from "../../services/authService";
 import { ROTAS } from "../../constanst/rotas";
 import Loading from "../../components/loading/Loading";
+import Rodape from "../../components/rodape/Rodape";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -62,84 +63,84 @@ export default function Login() {
 
   return (
     <main className="login-page">
-      <section className="login-brand">
-        <div className="brand-content">
-          <div className="brand-logo">PDV</div>
+      <div className="login-content">
+        <section className="login-brand">
+          <div className="brand-content">
+            <div className="brand-logo">PDV</div>
 
-          <h1>
-            Seu negócio,
-            <br />
-            mais simples.
-          </h1>
+            <h1>
+              Seu negócio,
+              <br />
+              mais simples.
+            </h1>
 
-          <p>
-            Gerencie suas vendas, produtos e clientes de forma rápida e
-            eficiente.
-          </p>
-        </div>
-
-        <span className="brand-version">PDV • v1.0.0</span>
-      </section>
-
-      <section className="login-form-section">
-        <div className="login-card">
-          <div className="login-header">
-            <h2>Bem-vindo!</h2>
-
-            <p>Entre na sua conta para continuar.</p>
+            <p>
+              Gerencie suas vendas, produtos e clientes de forma rápida e
+              eficiente.
+            </p>
           </div>
 
-          <form className="login-form" onSubmit={handleLogin}>
-            <div className="form-group">
-              <label htmlFor="email">E-mail</label>
+          <span className="brand-version">PDV • v1.0.0</span>
+        </section>
 
-              <input
-                id="email"
-                type="email"
-                placeholder="Digite seu e-mail"
-                autoComplete="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                disabled={carregando}
-              />
+        <section className="login-form-section">
+          <div className="login-card">
+            <div className="login-header">
+              <h2>Bem-vindo!</h2>
+
+              <p>Entre na sua conta para continuar.</p>
             </div>
 
-            <div className="form-group">
-              <div className="password-label">
-                <label htmlFor="password">Senha</label>
+            <form className="login-form" onSubmit={handleLogin}>
+              <div className="form-group">
+                <label htmlFor="email">E-mail</label>
 
-                <button type="button">Esqueceu a senha?</button>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="Digite seu e-mail"
+                  autoComplete="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  disabled={carregando}
+                />
               </div>
 
-              <input
-                id="password"
-                type="password"
-                placeholder="Digite sua senha"
-                autoComplete="current-password"
-                value={senha}
-                onChange={(event) => setSenha(event.target.value)}
+              <div className="form-group">
+                <div className="password-label">
+                  <label htmlFor="password">Senha</label>
+
+                  <button type="button">Esqueceu a senha?</button>
+                </div>
+
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="Digite sua senha"
+                  autoComplete="current-password"
+                  value={senha}
+                  onChange={(event) => setSenha(event.target.value)}
+                  disabled={carregando}
+                />
+              </div>
+
+              {erro && <div className="login-error">{erro}</div>}
+
+              <button
+                className="login-button"
+                type="submit"
                 disabled={carregando}
-              />
-            </div>
+              >
+                {carregando ? "Entrando..." : "Entrar"}
+              </button>
+            </form>
 
-            {erro && <div className="login-error">{erro}</div>}
+            {carregando && <Loading />}
+          </div>
+        </section>
+      </div>
 
-            <button
-              className="login-button"
-              type="submit"
-              disabled={carregando}
-            >
-              {carregando ? "Entrando..." : "Entrar"}
-            </button>
-          </form>
-
-          <p className="login-footer">
-            © 2026 PDV. Todos os direitos reservados.
-          </p>
-
-          {carregando && <Loading />}
-        </div>
-      </section>
+      <Rodape />
     </main>
   );
 }
