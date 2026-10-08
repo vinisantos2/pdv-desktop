@@ -1,7 +1,5 @@
 import "./inicio.css";
 
-import DashboardCards from "./components/DashboardCards/DashboardCards";
-import AcessoRapido from "./components/AcessoRapido";
 import UltimasVendas from "./components/UltimasVendas/UltimasVendas";
 import EstoqueBaixo from "./components/EstoqueBaixo";
 import Loading from "../../../../components/loading/Loading";
@@ -13,10 +11,9 @@ export default function Inicio() {
   const {
     usuario,
     empresa,
-    produtos,
+  
     ultimasVendas,
-    vendasHoje,
-    faturamentoHoje,
+    
     produtosEstoqueBaixo,
     carregando,
   } = useInicio();

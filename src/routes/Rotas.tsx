@@ -16,7 +16,6 @@ import DetalhesFiado from "../pages/Dashboard/navs/fiados/detalhes/DetalhesFiado
 
 import Empresa from "../pages/Dashboard/configuracoes/empresa/Empresa";
 import Usuarios from "../pages/Dashboard/configuracoes/usuarios/Usuarios";
-import Plano from "../pages/Dashboard/configuracoes/plano/Plano";
 import SobreApp from "../pages/Dashboard/configuracoes/sobre/Sobre";
 
 import RotaPrivada from "./RotaPrivada";

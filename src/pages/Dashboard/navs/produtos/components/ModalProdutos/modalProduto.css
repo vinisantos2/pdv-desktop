@@ -43,7 +43,7 @@
   border: 1px solid var(--border);
   border-radius: 12px;
 
-  background: var(--bg);
+  background: var(--bg-content);
 
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.2);
@@ -268,13 +268,12 @@
 .btn-limpar {
   border: 1px solid var(--border);
 
-  background: var(--bg);
 
-  color: var(--text-h);
+  color: var(--text)
 }
 
 .btn-limpar:hover {
-  background: var(--c-bg);
+  opacity: .5;
 }
 
 
@@ -295,16 +294,12 @@
 
 /* SALVAR */
 
-.btn-salvar {
-  border: none;
-
-  background: var(--bg-button);
-
-  color: var(--text-button);
+.btn-salvar2 {
+  background: #000;
 }
 
 .btn-salvar:hover {
-  background: #1d4ed8;
+  opacity: .8;
 }
 
 

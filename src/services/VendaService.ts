@@ -45,13 +45,20 @@ export async function criarVenda(
     data: Timestamp.now(),
     total,
     formaPagamento,
-    itens: itensVenda,
+    itens: itensVenda.map((item) => ({
+      ...item,
+      ...(item.imagemPatch !== undefined
+        ? { imagemPatch: item.imagemPatch }
+        : {imagemPatch: ""}),
+    })),
     dataPagamento: dataPagamento ?? null,
     statusPagamento: formaPagamento === "fiado" ? "pendente" : "pago",
-    ...(clienteId && {
-      clienteId,
-      clienteNome,
-    }),
+    ...(clienteId
+      ? {
+          clienteId,
+          clienteNome: clienteNome ?? "",
+        }
+      : {}),
   };
 
   console.log("VENDA ANTES DE SALVAR:", venda);

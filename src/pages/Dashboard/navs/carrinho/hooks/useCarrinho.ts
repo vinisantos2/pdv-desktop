@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { useAuth } from "../../../../../contexts/AuthContext";
-import { listarProdutos } from "../../../../../services/produtoService";
+import {
+  escutarProdutos,
+} from "../../../../../services/produtoService";
 
 import type { Produto } from "../../../../../types/Produto";
 import type { ItemVenda } from "../../../../../types/ItemVenda";
@@ -31,21 +33,18 @@ export function useCarrinho() {
     carregarProdutos();
   }, [empresa?.id]);
 
-  async function carregarProdutos() {
+  function carregarProdutos() {
+    if (!empresa?.id) return;
+
     setCarregando(true);
-    try {
-      if (!empresa?.id) return;
 
-      const lista = await listarProdutos(empresa.id);
-
+    const unsubscribe = escutarProdutos(empresa.id, (lista) => {
       setProdutos(lista);
-    } catch (error) {
-      console.error("Erro ao carregar produtos:", error);
-    } finally {
       setCarregando(false);
-    }
-  }
+    });
 
+    return unsubscribe;
+  }
   // =========================================================
   // BUSCA POR CÓDIGO
   // =========================================================
@@ -233,6 +232,7 @@ export function useCarrinho() {
 
     limparBusca,
     carregando,
+    carregarProdutos,
 
     // Carrinho
     adicionarProduto,

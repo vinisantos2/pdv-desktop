@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { ItemVenda } from "../../../../../../types/ItemVenda";
 import "./resumoVenda.css";
 
@@ -6,13 +7,12 @@ interface ResumoVendaProps {
   abrirModal: () => void;
 }
 
-export default function ResumoVenda({ itens, abrirModal }: ResumoVendaProps) {
-  const totalProdutos = itens.length;
+export default function ResumoVenda({
+  itens,
+  abrirModal,
+}: ResumoVendaProps) {
 
-  const quantidadeItens = itens.reduce(
-    (total, item) => total + item.quantidade,
-    0,
-  );
+  const totalProdutos = itens.length;
 
   const subtotal = itens.reduce(
     (total, item) => total + Number(item.valor) * item.quantidade,
@@ -28,16 +28,30 @@ export default function ResumoVenda({ itens, abrirModal }: ResumoVendaProps) {
     });
   }
 
-  function abriFinalizarVenda() {
+  function abrirFinalizarVenda() {
     if (itens.length > 0) {
       abrirModal();
     }
   }
+
+  function handleKeyDown(event: KeyboardEvent) {
+    console.log(event)
+    if (event.key === "F2") {
+      event.preventDefault();
+      abrirFinalizarVenda();
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [itens.length]);
+
   return (
     <section className="resumo-venda">
-      {/* =====================================================
-          CABEÇALHO
-          ===================================================== */}
 
       <div className="resumo-venda-header">
         <div>
@@ -46,10 +60,6 @@ export default function ResumoVenda({ itens, abrirModal }: ResumoVendaProps) {
           <span>{totalProdutos} itens</span>
         </div>
       </div>
-
-      {/* =====================================================
-          VALORES
-          ===================================================== */}
 
       <div className="resumo-venda-valores">
         <div className="resumo-venda-total">
@@ -61,12 +71,13 @@ export default function ResumoVenda({ itens, abrirModal }: ResumoVendaProps) {
 
       <button
         type="button"
-        onClick={abriFinalizarVenda}
+        onClick={abrirFinalizarVenda}
         className="resumo-venda-finalizar"
       >
         Finalizar venda
         <span>F2</span>
       </button>
+
     </section>
   );
 }

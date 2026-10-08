@@ -7,7 +7,7 @@
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
-  background: var(-bg);
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   gap: 10px;

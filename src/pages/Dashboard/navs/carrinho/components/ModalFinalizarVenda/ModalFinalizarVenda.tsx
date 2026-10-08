@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import "./modalFinalizarVenda.css";
-import type { ItemVenda } from "../../../../../types/ItemVenda";
-import { criarVenda } from "../../../../../services/VendaService";
-import { useAuth } from "../../../../../contexts/AuthContext";
-import type { Cliente } from "../../../../../types/Cliente";
-import { listarClientes } from "../../../../../services/ClienteService";
-import Loading from "../../../../../components/loading/Loading";
-import type { Venda } from "../../../../../types/Venda";
+import type { ItemVenda } from "../../../../../../types/ItemVenda";
+import { criarVenda } from "../../../../../../services/VendaService";
+import { useAuth } from "../../../../../../contexts/AuthContext";
+import type { Cliente } from "../../../../../../types/Cliente";
+import { listarClientes } from "../../../../../../services/ClienteService";
+import Loading from "../../../../../../components/loading/Loading";
+import type { Venda } from "../../../../../../types/Venda";
 import { Timestamp } from "firebase/firestore";
 import { toast } from "sonner";
 
@@ -112,6 +112,7 @@ export default function ModalFinalizarVenda({
       }
     } catch (error) {
       console.error("Erro ao finalizar venda:", error);
+      toast.error("Erro ao finalizar venda")
     } finally {
       setCarregando(false);
     }

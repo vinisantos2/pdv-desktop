@@ -1,4 +1,3 @@
-import { useRef } from "react";
 
 import InputPadrao from "../../../../../../components/input/InputPadrao";
 

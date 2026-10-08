@@ -5,7 +5,6 @@ import {
   excluirProduto,
   listarProdutos,
 } from "../../../../../services/produtoService";
-import { toast } from "sonner";
 
 export function useProdutos() {
   // =========================

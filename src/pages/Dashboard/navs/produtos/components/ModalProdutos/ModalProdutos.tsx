@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 
-import "./modalProduto.css";
-
-
 import { toast } from "sonner";
 import type { Produto } from "../../../../../../types/Produto";
 import { useAuth } from "../../../../../../contexts/AuthContext";
 import imageCompression from "browser-image-compression";
 import { uploadImagem } from "../../../../../../services/imagemService/uploadImagemService";
-import { atualizarProduto, salvarProduto } from "../../../../../../services/produtoService";
+import {
+  atualizarProduto,
+  salvarProduto,
+} from "../../../../../../services/produtoService";
 import ImagemSelect from "../../../../../../components/imgemSelect/ImagemSelect";
 import InputPadrao from "../../../../../../components/input/InputPadrao";
 import Loading from "../../../../../../components/loading/Loading";
+import "./modalProduto.css";
 
 interface ProdutoFormProps {
   produtoSelecionado: Produto | null;

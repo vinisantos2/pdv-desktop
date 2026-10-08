@@ -1,18 +1,25 @@
 import { useState } from "react";
 import "./carrinho.css";
+
 import BuscaProduto from "./components/BuscaProduto/BuscaProduto";
 import ProdutosRapidos from "./components/ProdutosRapidos/ProdutosRapidos";
 import ResumoVenda from "./components/ResumoVenda/ResumoVenda";
 import TabelaVenda from "./components/TabelaVenda/TabelaVenda";
 import UltimoProduto from "./components/UltimoProduto/UltimoProduto";
+
 import { useCarrinho } from "./hooks/useCarrinho";
-import ModalFinalizarVenda from "./components/ModalFinalizarVenda";
+import ModalFinalizarVenda from "./components/ModalFinalizarVenda/ModalFinalizarVenda";
+
 import type { Venda } from "../../../../types/Venda";
+import ComprovanteVenda from "../../../../components/comprovante/Comprovante";
+import { useAuth } from "../../../../contexts/AuthContext";
 
 export default function Carrinho() {
   const [modalAberto, setModalAberto] = useState(false);
 
   const [comprovanteVenda, setComprovanteVenda] = useState<Venda | null>(null);
+  const { empresa } = useAuth();
+  if (!empresa) return;
 
   const {
     produtos,
@@ -28,6 +35,7 @@ export default function Carrinho() {
     carregando,
     removerItem,
     limparVenda,
+    carregarProdutos,
     ultimoProduto,
     quantidadeUltimoProduto,
   } = useCarrinho();
@@ -39,12 +47,16 @@ export default function Carrinho() {
     // Limpa o carrinho
     limparVenda();
 
-    // Se recebeu uma venda, significa que o cliente
-    // escolheu "Finalizar e imprimir"
+    // Se recebeu a venda, abre o comprovante
     if (venda) {
       setComprovanteVenda(venda);
     }
   }
+
+  function fecharComprovante() {
+    setComprovanteVenda(null);
+  }
+
   return (
     <div className="carrinho-page">
       <div className="carrinho-busca">
@@ -80,6 +92,7 @@ export default function Carrinho() {
             produto={ultimoProduto}
             quantidade={quantidadeUltimoProduto}
           />
+
           <ResumoVenda
             abrirModal={() => setModalAberto(true)}
             itens={itensVenda}
@@ -90,9 +103,21 @@ export default function Carrinho() {
       {modalAberto && (
         <ModalFinalizarVenda
           itens={itensVenda}
-          onFechar={() => setModalAberto(false)}
+          onFechar={() => {
+            carregarProdutos()
+            setModalAberto(false);
+           
+          }}
           onVendaFinalizada={finalizarVenda}
           aberto={modalAberto}
+        />
+      )}
+
+      {comprovanteVenda && (
+        <ComprovanteVenda
+          empresa={empresa}
+          venda={comprovanteVenda}
+          onVoltar={fecharComprovante}
         />
       )}
     </div>

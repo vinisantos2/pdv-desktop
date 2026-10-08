@@ -5,6 +5,7 @@ import {
   getDoc,
   getDocs,
   limit,
+  onSnapshot,
   orderBy,
   query,
   setDoc,
@@ -45,6 +46,21 @@ export async function listarProdutos(empresaId: string): Promise<Produto[]> {
   return snapshot.docs.map((doc) => doc.data() as Produto);
 }
 
+export function escutarProdutos(
+  empresaId: string,
+  onProdutosAtualizados: (produtos: Produto[]) => void,
+) {
+  const q = query(produtosRef(empresaId), orderBy("descricao"));
+
+  const unsubscribe = onSnapshot(q, (snapshot) => {
+    const produtos = snapshot.docs.map((doc) => doc.data() as Produto);
+
+    onProdutosAtualizados(produtos);
+  });
+
+  return unsubscribe;
+}
+
 // =========================================================
 // ATUALIZAR PRODUTO
 // =========================================================
@@ -63,8 +79,6 @@ export async function atualizarProduto(
     ...(produto.imagemPatch !== undefined && {
       imagemPatch: produto.imagemPatch,
     }),
-
-    
   });
 
   return true;
