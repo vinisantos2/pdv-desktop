@@ -1,0 +1,246 @@
+/* =========================
+   FILTROS
+========================= */
+
+.filtros-venda {
+  width: 100%;
+  min-width: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background: transparent;
+
+  border: none;
+  border-radius: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.filtros-venda-campos {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 1.8fr)
+    minmax(150px, 1fr)
+    minmax(150px, 1fr)
+    minmax(160px, 1fr);
+
+  gap: 12px;
+}
+
+
+/* =========================
+   GRUPOS
+========================= */
+
+.filtro-venda-busca,
+.filtro-venda-data,
+.filtro-venda-pagamento {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+/* =========================
+   LABELS
+========================= */
+
+.filtro-venda-busca label,
+.filtro-venda-data label,
+.filtro-venda-pagamento label {
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #4b5563;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+.filtro-venda-pagamento select {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d9dde2;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: var(--text);
+
+  font-size: 14px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.filtro-venda-pagamento select:hover {
+  border-color: #bfc5cb;
+}
+
+.filtro-venda-pagamento select:focus {
+  border-color: var(--bg-button);
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =========================
+   AÇÕES
+========================= */
+
+.filtros-venda-acoes {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 4px;
+}
+
+
+/* =========================
+   BOTÃO FILTRAR
+========================= */
+
+.btn-filtrar {
+  height: 40px;
+
+  padding: 0 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--bg-button);
+  color: var(--text);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.btn-filtrar:hover {
+  background: #2c2b86;
+}
+
+.btn-filtrar:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================
+   BOTÃO LIMPAR
+========================= */
+
+.btn-limpar-filtros {
+  height: 40px;
+
+  padding: 0 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d9dde2;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #4b5563;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.btn-limpar-filtros:hover {
+  background: #f1f3f5;
+
+  border-color: #cbd1d8;
+}
+
+.btn-limpar-filtros:active {
+  transform: scale(0.97);
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+  .filtros-venda-campos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filtro-venda-busca {
+    grid-column: span 2;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .filtros-venda-campos {
+    grid-template-columns: 1fr;
+  }
+
+  .filtro-venda-busca {
+    grid-column: auto;
+  }
+
+  .filtros-venda-acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-filtrar,
+  .btn-limpar-filtros {
+    width: 100%;
+  }
+}

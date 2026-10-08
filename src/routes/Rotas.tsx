@@ -121,10 +121,10 @@ export default function Rotas() {
             />
 
             {/* PLANO */}
-            <Route
+            {/* <Route
               path={ROTAS.DASHBOARD.CONFIGURACOES.PLANO}
               element={<Plano />}
-            />
+            /> */}
 
           </Route>
 

@@ -1,10 +1,17 @@
 .usuarios-page {
   padding: 28px;
+  height: 100vh;
 }
 
 .usuarios-container {
   border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   border-radius: 10px;
-  background: var(--card-bg);
+  background: var(--bg-content);
   overflow: hidden;
+
+
+  padding: 20px;
 }

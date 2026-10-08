@@ -1,0 +1,215 @@
+.produtos-header {
+  width: 100%;
+  min-width: 0;
+
+  padding: 24px;
+  box-sizing: border-box;
+
+  background: var(--bg-content);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   TOPO
+========================= */
+
+.produtos-header-topo {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.produtos-titulo {
+  min-width: 0;
+}
+
+.produtos-titulo h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  color: var(--text);
+}
+
+.produtos-titulo p {
+  margin: 7px 0 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: var(--text-secondary);
+}
+
+
+/* =========================
+   BOTÃO
+========================= */
+
+.btn-novo-produto {
+  height: 42px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--bg-button);
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.btn-novo-produto:hover {
+  background: #2c2b86;
+}
+
+.btn-novo-produto:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================
+   ÁREA DE BUSCA
+========================= */
+
+.produtos-header-busca {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid var(--border);
+}
+
+
+/* Título da lista */
+
+.produtos-lista-titulo {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  flex-shrink: 0;
+}
+
+.produtos-lista-titulo h2 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: var(--text);
+}
+
+.produtos-lista-titulo span {
+  font-size: 13px;
+
+  color: var(--text-secondary);
+}
+
+
+/* =========================
+   CAMPOS DE PESQUISA
+========================= */
+
+.produtos-lista-pesquisas {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+}
+
+.produto-busca-codigo {
+  width: 240px;
+}
+
+.produto-busca-descricao {
+  width: 320px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+  .produtos-header-busca {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .produtos-lista-pesquisas {
+    width: 100%;
+  }
+
+  .produto-busca-codigo,
+  .produto-busca-descricao {
+    flex: 1;
+    width: auto;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .produtos-header {
+    padding: 18px;
+  }
+
+  .produtos-header-topo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .btn-novo-produto {
+    width: 100%;
+  }
+
+  .produtos-lista-pesquisas {
+    flex-direction: column;
+  }
+
+  .produto-busca-codigo,
+  .produto-busca-descricao {
+    width: 100%;
+  }
+}

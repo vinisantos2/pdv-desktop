@@ -1,26 +1,54 @@
 import "./fiados.css";
+
 import Loading from "../../../../components/loading/Loading";
-import FiltroFiados from "./components/FiltroFiados";
-import ListaFiado from "./components/ListaFiados";
+
+import FiltroFiados from "./components/FiltroFiados/FiltroFiados";
+
 import useFiados from "./hooks/useFiados";
+import ListaFiado from "./components/ListaFiados/ListaFiados";
 
 export default function Fiados() {
-  const { vendas, carregando, busca, setBusca } = useFiados();
+  const {
+    vendas,
+    carregando,
+    busca,
+    setBusca,
+  } = useFiados();
 
-  if (carregando) return <Loading />;
+  if (carregando) {
+    return <Loading />;
+  }
 
   return (
-    <div className="fiados-container">
+    <div className="fiados-page">
+
       {/* HEADER */}
+
       <header className="fiados-header">
-        <div>
+        <div className="fiados-titulo">
           <h1>Fiados</h1>
 
-          <p>Gerencie as vendas fiadas dos seus clientes</p>
+          <p>
+            Gerencie as vendas fiadas dos seus clientes.
+          </p>
         </div>
       </header>
-      <FiltroFiados busca={busca} setBusca={setBusca} />
-      <ListaFiado vendas={vendas} />
+
+      {/* CONTEÚDO */}
+
+      <main className="fiados-content">
+
+        <FiltroFiados
+          busca={busca}
+          setBusca={setBusca}
+        />
+
+        <ListaFiado
+          vendas={vendas}
+        />
+
+      </main>
+
     </div>
   );
 }

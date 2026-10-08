@@ -8,6 +8,7 @@ import { listarClientes } from "../../../../../services/ClienteService";
 import Loading from "../../../../../components/loading/Loading";
 import type { Venda } from "../../../../../types/Venda";
 import { Timestamp } from "firebase/firestore";
+import { toast } from "sonner";
 
 interface ModalFinalizarVendaProps {
   aberto: boolean;
@@ -45,7 +46,6 @@ export default function ModalFinalizarVenda({
 
       try {
         const lista = await listarClientes(empresa.id);
-
         setClientes(lista.filter((cliente) => cliente.ativo));
       } catch (error) {
         console.error("Erro ao carregar clientes:", error);
@@ -79,12 +79,12 @@ export default function ModalFinalizarVenda({
     }
 
     if (formaPagamento === "fiado" && !clienteId) {
-      alert("Selecione o cliente da venda fiada.");
+      toast.error("Selecione o cliente da venda fiada.");
       return;
     }
 
     if (formaPagamento === "dinheiro" && valorRecebido < total) {
-      alert("O valor recebido é menor que o total da venda.");
+      toast.error("O valor recebido é menor que o total da venda.");
       return;
     }
 
@@ -102,6 +102,8 @@ export default function ModalFinalizarVenda({
         formaPagamento === "fiado" ? clienteNome : "",
         dataPagamento,
       );
+
+      toast.success("Venda finalizada com sucesso!");
 
       if (imprimir) {
         onVendaFinalizada(venda);

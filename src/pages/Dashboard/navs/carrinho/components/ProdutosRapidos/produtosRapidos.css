@@ -1,0 +1,201 @@
+/* =========================================================
+   PRODUTOS RÁPIDOS
+   ========================================================= */
+
+.produtos-rapidos {
+    width: 100%;
+    padding: 15px;
+    height: 30%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e1e5ea;
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.produtos-rapidos-header {
+    margin-bottom: 14px;
+}
+
+
+.produtos-rapidos-header h2 {
+    margin: 0;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #172033;
+}
+
+
+/* =========================================================
+   LISTA
+   ========================================================= */
+
+.produtos-rapidos-lista {
+    width: 100%;
+
+    display: flex;
+    gap: 12px;
+
+    overflow-x: auto;
+
+    padding-bottom: 4px;
+
+    scrollbar-width: thin;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.produto-rapido {
+    width: 180px;
+    min-width: 180px;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border: 1px solid #e4e7eb;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+.produto-rapido:hover {
+    border-color: #2563eb;
+
+    background: #f8faff;
+}
+
+
+.produto-rapido:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   IMAGEM
+   ========================================================= */
+
+.produto-rapido-imagem {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background: #f1f4f8;
+}
+
+
+.produto-rapido-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.produto-rapido-imagem span {
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+   ========================================================= */
+
+.produto-rapido-info {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.produto-rapido-descricao {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #374151;
+}
+
+
+.produto-rapido-preco {
+    font-size: 14px;
+
+    color: #2563eb;
+}
+
+.produto-rapido {
+    cursor: pointer;
+}
+
+.produto-rapido:disabled {
+    cursor: not-allowed;
+}
+
+.produto-sem-estoque {
+    opacity: 0.5;
+}
+
+.produto-rapido-estoque {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.produto-rapido-indisponivel {
+    font-size: 11px;
+    font-weight: 600;
+    color: #d32f2f;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .produtos-rapidos {
+        padding: 10px;
+    }
+
+    .produto-rapido {
+        width: 160px;
+        min-width: 160px;
+    }
+}

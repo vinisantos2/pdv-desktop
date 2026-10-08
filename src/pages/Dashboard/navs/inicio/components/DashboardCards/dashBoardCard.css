@@ -1,0 +1,117 @@
+/* =========================
+   CARDS DO DASHBOARD
+========================= */
+
+.dashboard-cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  grid-row: auto;
+  justify-content: center;
+  gap: 18px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.dashboard-card {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgb(219, 224, 229);
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+}
+
+
+/* =========================
+   ÍCONE
+========================= */
+
+.dashboard-card-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: var(--bg);
+
+  font-size: 22px;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.dashboard-card-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.dashboard-card-content span {
+  font-size: 13px;
+
+  color: var(--text-secondary);
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dashboard-card-content strong {
+  font-size: 21px;
+
+  font-weight: 700;
+
+  color: var(--text);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .dashboard-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card {
+    padding: 16px;
+  }
+}

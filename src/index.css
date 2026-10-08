@@ -15,19 +15,25 @@ html,
 body,
 :root {
   font-family: system-ui, "Segoe UI", Roboto, sans-serif;
-  --text: #6b6375;
+  --text: #010102;
   --text-h: #08060d;
-  --bg: #f3f4f6;
+  --bg: #6F8090;
+  --bg-content: #FFF;
+  --bg-tabela: #49464667;
+  --bg-tabela-header: #bccae7;
   --border: #e5e4e7;
   --accent: #aa3bff;
   --bg-button: #1D4ED8;
-  --text-button: #efeaea;
+  --text-button: #8e7e7e;
+  --border: #000;
+  --input-bg: rgb(196, 216, 234);
   --c-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.3);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 body {

@@ -87,21 +87,21 @@ export default function SidebarMenu() {
                 👥 Usuários
               </NavLink>
 
-              {/* PLANO */}
-              <NavLink
+              
+              {/* <NavLink
                 to={ROTAS.DASHBOARD.CONFIGURACOES.PLANO}
                 className="submenu-item"
               >
                 💳 Plano e pagamento
-              </NavLink>
+              </NavLink> */}
 
               {/* PERMISSÕES */}
-              <NavLink
+              {/* <NavLink
                 to={ROTAS.DASHBOARD.CONFIGURACOES.PERMISSOES}
                 className="submenu-item"
               >
                 🔒 Permissões
-              </NavLink>
+              </NavLink> */}
             </div>
           )}
         </>

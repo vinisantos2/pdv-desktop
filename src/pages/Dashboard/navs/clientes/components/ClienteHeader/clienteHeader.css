@@ -1,0 +1,121 @@
+/* ==============================
+   HEADER
+============================== */
+
+.clientes-header {
+  width: 100%;
+  height: 20vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  padding: 24px;
+
+  gap: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e6ea;
+  border-radius: 15px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ==============================
+   TÍTULO
+============================== */
+
+.clientes-header h1 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: var(--text);
+
+  line-height: 1.2;
+}
+
+
+/* ==============================
+   DESCRIÇÃO
+============================== */
+
+.clientes-header p {
+  margin: 7px 0 0;
+
+  font-size: 14px;
+
+  color: var(--text-secondary);
+
+  line-height: 1.5;
+}
+
+
+/* ==============================
+   BOTÃO NOVO CLIENTE
+============================== */
+
+.clientes-header .btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 42px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--bg-button);
+
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+
+.clientes-header .btn-primary:hover {
+  background: #2c2b86;
+}
+
+
+.clientes-header .btn-primary:active {
+  transform: scale(0.98);
+}
+
+
+/* ==============================
+   RESPONSIVO
+============================== */
+
+@media (max-width: 600px) {
+
+  .clientes-header {
+    height: auto;
+
+    min-height: 150px;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .clientes-header .btn-primary {
+    width: 100%;
+  }
+}

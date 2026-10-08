@@ -1,56 +1,74 @@
-import "./produtos.css";
+import { useState } from "react";
 
-import ProdutoForm from "./components/ProdutoForm";
-import ProdutoLista from "./components/ProdutoLista";
 import { useProdutos } from "./hooks/useProdutos";
+
+import ProdutoLista from "./components/ProdutoLista/ProdutoLista";
+
+import HeaderProduto from "./components/HeaderProduto/HeaderProduto";
+import ModalProdutos from "./components/ModalProdutos/ModalProdutos";
+import "./produtos.css";
 
 function Produtos() {
   const {
     produtos,
     produtoSelecionado,
     carregando,
+    buscaCodigo,
+    buscaDescricao,
+    produtosFiltrados,
+
+    setBuscaCodigo,
+    setBuscaDescricao,
     selecionarProduto,
     limparSelecao,
     produtoSalvo,
     excluir,
   } = useProdutos();
 
+  const [modalAberto, setModalAberto] = useState(false);
+
+  function abrirNovoProduto() {
+    limparSelecao();
+    setModalAberto(true);
+  }
+
+  function editarProduto(produto: (typeof produtos)[number]) {
+    selecionarProduto(produto);
+    setModalAberto(true);
+  }
+
+  function fecharModal() {
+    setModalAberto(false);
+    limparSelecao();
+  }
+
   return (
-    <div className="produtos">
-      {/* =========================
-          HEADER
-      ========================= */}
+    <div className="produtos-page">
+      <HeaderProduto
+        abrirNovoProduto={abrirNovoProduto}
+        buscaCodigo={buscaCodigo}
+        setBuscaCodigo={setBuscaCodigo}
+        buscaDescricao={buscaDescricao}
+        setBuscaDescricao={setBuscaDescricao}
+      />
 
-      <header className="produtos-header">
-        <div>
-          <h1>Produtos</h1>
-
-          <p>Cadastro e gerenciamento de produtos</p>
-        </div>
-      </header>
-
-      {/* =========================
-          CONTEÚDO
-      ========================= */}
-
-      <main className="produtos-conteudo">
-        {/* FORMULÁRIO */}
-
-        <ProdutoForm
-          produtoSelecionado={produtoSelecionado}
-          onSalvo={produtoSalvo}
-          limpar={limparSelecao}
-        />
-
-        {/* LISTA */}
-
+      <main className="produtos-content">
         <ProdutoLista
-          produtos={produtos}
-          onSelecionar={selecionarProduto}
+          produtosFiltrados={produtosFiltrados}
+          onSelecionar={editarProduto}
           onExcluir={excluir}
           carregando={carregando}
         />
       </main>
+
+      {modalAberto && (
+        <ModalProdutos
+          produtoSelecionado={produtoSelecionado}
+          onSalvo={produtoSalvo}
+          limpar={limparSelecao}
+          onFechar={fecharModal}
+        />
+      )}
     </div>
   );
 }

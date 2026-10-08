@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
 
-import "./login.css";
 import { useState, type FormEvent } from "react";
 import { fazerLogin } from "../../services/authService";
 import { ROTAS } from "../../constanst/rotas";
 import Loading from "../../components/loading/Loading";
 import Rodape from "../../components/rodape/Rodape";
+import InputPadrao from "../../components/input/InputPadrao";
+import "./login.css";
+
 
 export default function Login() {
   const navigate = useNavigate();
@@ -92,32 +94,28 @@ export default function Login() {
             </div>
 
             <form className="login-form" onSubmit={handleLogin}>
-              <div className="form-group">
-                <label htmlFor="email">E-mail</label>
-
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="Digite seu e-mail"
-                  autoComplete="email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                  disabled={carregando}
-                />
-              </div>
+              <InputPadrao
+                id="email"
+                name="email"
+                label="E-mail"
+                type="email"
+                placeholder="Digite seu e-mail"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                disabled={carregando}
+              />
 
               <div className="form-group">
                 <div className="password-label">
                   <label htmlFor="password">Senha</label>
-
                   <button type="button">Esqueceu a senha?</button>
                 </div>
 
-                <input
+                <InputPadrao
                   id="password"
+                  name="password"
                   type="password"
                   placeholder="Digite sua senha"
-                  autoComplete="current-password"
                   value={senha}
                   onChange={(event) => setSenha(event.target.value)}
                   disabled={carregando}

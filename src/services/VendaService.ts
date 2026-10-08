@@ -46,13 +46,15 @@ export async function criarVenda(
     total,
     formaPagamento,
     itens: itensVenda,
-    dataPagamento,
+    dataPagamento: dataPagamento ?? null,
     statusPagamento: formaPagamento === "fiado" ? "pendente" : "pago",
     ...(clienteId && {
       clienteId,
       clienteNome,
     }),
   };
+
+  console.log("VENDA ANTES DE SALVAR:", venda);
 
   await runTransaction(db, async (transaction) => {
     const produtos = await buscarProdutosVenda(

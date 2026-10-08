@@ -13,9 +13,11 @@
   "dependencies": {
     "browser-image-compression": "^2.0.2",
     "firebase": "^12.19.0",
+    "lucide-react": "^1.52.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.3"
+    "react-router-dom": "^7.18.3",
+    "sonner": "^2.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",

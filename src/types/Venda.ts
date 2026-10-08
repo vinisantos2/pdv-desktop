@@ -11,6 +11,6 @@ export type Venda = {
   clienteNome?: string;
   // Controle do pagamento
   statusPagamento: "pendente" | "pago";
-  dataPagamento?: Timestamp;
+  dataPagamento?: Timestamp | null;
   itens: ItemVenda[];
 };

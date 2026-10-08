@@ -1,0 +1,347 @@
+/* =========================================================
+   RESUMO DA VENDA
+   ========================================================= */
+
+.resumo-venda {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e5ea;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.resumo-venda-header {
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #edf0f3;
+}
+
+
+.resumo-venda-header h2 {
+  margin: 0 0 4px;
+
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+
+.resumo-venda-header span {
+  color: #8a94a6;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   VALORES
+   ========================================================= */
+
+.resumo-venda-valores {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.resumo-venda-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.resumo-venda-linha span {
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+.resumo-venda-linha strong {
+  color: #374151;
+
+  font-size: 13px;
+}
+
+
+.resumo-venda-total {
+  margin-top: 5px;
+  padding-top: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #edf0f3;
+}
+
+
+.resumo-venda-total span {
+  color: #172033;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+.resumo-venda-total strong {
+  color: #2563eb;
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PAGAMENTO
+   ========================================================= */
+
+.resumo-venda-pagamento {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.resumo-venda-pagamento h3 {
+  margin: 0;
+
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FORMAS DE PAGAMENTO
+   ========================================================= */
+
+.resumo-venda-formas {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+}
+
+
+.resumo-venda-forma {
+  height: 40px;
+
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.resumo-venda-forma:hover {
+  border-color: #2563eb;
+
+  color: #2563eb;
+}
+
+
+.resumo-venda-forma.ativo {
+  border-color: #2563eb;
+
+  background: #eef4ff;
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   VALOR RECEBIDO
+   ========================================================= */
+
+.resumo-venda-recebido {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+.resumo-venda-recebido label {
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+.resumo-venda-input {
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 12px;
+
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+.resumo-venda-input:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+.resumo-venda-input span {
+  margin-right: 7px;
+
+  color: #8a94a6;
+
+  font-size: 13px;
+}
+
+
+.resumo-venda-input input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   TROCO
+   ========================================================= */
+
+.resumo-venda-troco {
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 8px;
+
+  background: #f0fdf4;
+}
+
+
+.resumo-venda-troco span {
+  color: #166534;
+
+  font-size: 13px;
+}
+
+
+.resumo-venda-troco strong {
+  color: #15803d;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   FINALIZAR VENDA
+   ========================================================= */
+
+.resumo-venda-finalizar {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #16a34a;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+
+.resumo-venda-finalizar:hover {
+  background: #15803d;
+}
+
+
+.resumo-venda-finalizar:active {
+  transform: scale(0.98);
+}
+
+
+.resumo-venda-finalizar span {
+  padding: 3px 6px;
+
+  border-radius: 4px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .resumo-venda {
+    padding: 15px;
+  }
+}

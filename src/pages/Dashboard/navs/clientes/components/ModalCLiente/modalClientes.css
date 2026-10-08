@@ -1,0 +1,370 @@
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.cliente-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.cliente-modal {
+    width: 100%;
+    max-width: 520px;
+    max-height: calc(100vh - 40px);
+
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: #FFF;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.cliente-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    flex-shrink: 0;
+}
+
+.cliente-modal-header h2 {
+    margin: 0;
+
+    color: var(--text-h);
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.cliente-modal-header span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+.cliente-modal-header button {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.cliente-modal-header button:hover {
+    background: var(--c-bg);
+    color: var(--text-h);
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+========================================================= */
+
+.cliente-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.campo label {
+    color: var(--text-h);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+
+    color: var(--text-h);
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.campo input {
+    height: 44px;
+
+    padding: 0 12px;
+}
+
+.campo textarea {
+    min-height: 80px;
+
+    padding: 11px 12px;
+
+    resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: var(--text);
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--accent);
+
+    box-shadow: 0 0 0 3px var(--c-bg);
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.campo-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-top: 16px;
+
+    border-top: 1px solid var(--border);
+}
+
+.campo-status>div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.campo-status label {
+    color: var(--text-h);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.campo-status span {
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.switch {
+    width: 46px;
+    height: 24px;
+
+    padding: 3px;
+
+    display: flex;
+    align-items: center;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #d1d5db;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.switch span {
+    width: 18px;
+    height: 18px;
+
+    display: block;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    transition: transform 0.2s ease;
+}
+
+.switch.ativo {
+    background: #22c55e;
+}
+
+.switch.ativo span {
+    transform: translateX(22px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.cliente-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 16px 20px;
+
+    border-top: 1px solid var(--border);
+
+    flex-shrink: 0;
+}
+
+.cliente-modal-footer button {
+    height: 40px;
+
+    padding: 0 16px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.btn-cancelar {
+    border: 1px solid var(--border);
+
+    background: var(--bg);
+
+    color: var(--text-h);
+}
+
+.btn-cancelar:hover {
+    background: var(--c-bg);
+}
+
+.btn-salvar {
+    border: none;
+
+    background: var(--bg-button);
+
+    color: var(--text-button);
+}
+
+.btn-salvar:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .cliente-modal-overlay {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .cliente-modal {
+        max-width: none;
+
+        max-height: 95vh;
+
+        border-radius: 14px 14px 0 0;
+    }
+
+    .cliente-modal-header {
+        padding: 16px;
+    }
+
+    .cliente-form {
+        padding: 16px;
+    }
+
+    .cliente-modal-footer {
+        padding: 14px 16px;
+    }
+
+    .cliente-modal-footer button {
+        flex: 1;
+    }
+
+}

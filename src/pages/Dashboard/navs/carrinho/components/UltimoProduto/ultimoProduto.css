@@ -1,0 +1,202 @@
+.ultimo-produto {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e5ea;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.ultimo-produto-header {
+    min-height: 44px;
+
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    border-bottom: 1px solid #edf0f3;
+}
+
+.ultimo-produto-header h2 {
+    margin: 0;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #263449;
+}
+
+.ultimo-produto-icone {
+    font-size: 14px;
+
+    color: #2563eb;
+}
+
+
+/* =========================================
+   CONTEÚDO
+========================================= */
+
+.ultimo-produto-conteudo {
+    min-height: 82px;
+
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   IMAGEM
+========================================= */
+
+.ultimo-produto-imagem {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+
+    background: #f8fafc;
+}
+
+.ultimo-produto-imagem img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.ultimo-produto-imagem span {
+    font-size: 24px;
+}
+
+
+/* =========================================
+   INFORMAÇÕES DO PRODUTO
+========================================= */
+
+.ultimo-produto-info {
+    min-width: 180px;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.ultimo-produto-info strong {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    color: #263449;
+}
+
+.ultimo-produto-info span {
+    font-size: 11px;
+
+    color: #7b8798;
+}
+
+
+/* =========================================
+   DADOS
+========================================= */
+
+.ultimo-produto-dado {
+    min-width: 75px;
+
+    padding-left: 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    border-left: 1px solid #edf0f3;
+}
+
+.ultimo-produto-dado span {
+    font-size: 10px;
+
+    color: #7b8798;
+}
+
+.ultimo-produto-dado strong {
+    font-size: 12px;
+
+    color: #263449;
+}
+
+
+/* =========================================
+   ESTADO VAZIO
+========================================= */
+
+.ultimo-produto-vazio {
+    min-height: 82px;
+
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 800px) {
+    .ultimo-produto-conteudo {
+        flex-wrap: wrap;
+    }
+
+    .ultimo-produto-info {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ultimo-produto-dado {
+        border-left: none;
+
+        padding-left: 0;
+    }
+}

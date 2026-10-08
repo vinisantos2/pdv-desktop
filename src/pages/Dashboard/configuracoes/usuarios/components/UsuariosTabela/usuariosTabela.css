@@ -1,154 +1,190 @@
-.usuarios-tabela-wrapper {
-  overflow-x: auto;
-}
+/* =========================
+   CONTAINER DA TABELA
+========================= */
 
 .usuarios-tabela {
   width: 100%;
+
+  overflow-x: auto;
+
+  background-color: var(--bg-content);
+
+  border: 1px solid var(--border);
+  border-radius: 15px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.usuarios-tabela table {
+  width: 100%;
+
+  min-width: 800px;
+
   border-collapse: collapse;
+
+  text-align: left;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.usuarios-tabela thead {
+  background-color: var(--bg-tabela-header);
 }
 
 .usuarios-tabela th {
-  padding: 13px 18px;
+  padding: 15px 18px;
 
-  text-align: left;
-
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
 
-  color: var(--text-secondary);
-  background: var(--accent-bg);
+  color: var(--text);
+
+  white-space: nowrap;
+
+  border-bottom: 1px solid var(--border);
 }
 
-.usuarios-tabela td {
-  padding: 14px 18px;
 
-  border-top: 1px solid var(--border);
-}
+/* =========================
+   LINHAS
+========================= */
 
 .usuarios-tabela tbody tr {
-  transition: background 0.12s ease;
+  transition: background-color 0.15s ease;
 }
 
 .usuarios-tabela tbody tr:hover {
-  background: var(--accent-bg);
+  background-color: var(--bg);
 }
 
-/* USUÁRIO */
 
-.usuario-info {
-  display: flex;
-  align-items: center;
-  gap: 11px;
+/* =========================
+   CÉLULAS
+========================= */
+
+.usuarios-tabela td {
+  padding: 16px 18px;
+
+  font-size: 14px;
+
+  color: var(--text);
+
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-tabela);
+
+  white-space: nowrap;
 }
 
-.usuario-avatar {
-  width: 38px;
-  height: 38px;
 
-  border-radius: 50%;
+/* Remove borda da última linha */
 
-  display: flex;
+.usuarios-tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status-ativo,
+.status-inativo {
+  display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
-  background: var(--accent-bg);
+  padding: 5px 10px;
 
-  font-weight: 700;
-}
-
-.usuario-info strong {
-  display: block;
-  font-size: 14px;
-}
-
-.usuario-info span {
-  display: block;
-
-  margin-top: 3px;
-
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-/* PERFIL */
-
-.usuario-perfil {
-  display: inline-flex;
-
-  padding: 5px 9px;
-
-  border-radius: 6px;
+  border-radius: 20px;
 
   font-size: 12px;
   font-weight: 600;
 }
 
-.usuario-perfil.admin {
-  background: var(--accent-bg);
+
+/* Ativo */
+
+.status-ativo {
+  background-color: rgba(34, 197, 94, 0.12);
+
+  color: #16a34a;
 }
 
-.usuario-perfil.funcionario {
-  background: var(--accent-bg);
+
+/* Inativo */
+
+.status-inativo {
+  background-color: rgba(239, 68, 68, 0.12);
+
+  color: #dc2626;
 }
 
-/* STATUS */
 
-.usuario-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
+/* =========================
+   AÇÕES
+========================= */
+
+.usuario-acoes {
+  width: 1%;
+
+  text-align: right;
+}
+
+
+/* =========================
+   BOTÃO EDITAR
+========================= */
+
+.menu-usuario button {
+  padding: 7px 12px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 7px;
+
+  background-color: var(--bg-button);
+
+  color: var(--text);
 
   font-size: 13px;
-  font-weight: 500;
-}
-
-.usuario-status i {
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-}
-
-.usuario-status.ativo i {
-  background: #22c55e;
-}
-
-.usuario-status.inativo i {
-  background: #9ca3af;
-}
-
-/* AÇÕES */
-
-.btn-acoes {
-  width: 32px;
-  height: 32px;
-
-  border: 0;
-  border-radius: 6px;
-
-  background: transparent;
 
   cursor: pointer;
-  font-size: 20px;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
 }
 
-.btn-acoes:hover {
-  background: var(--accent-bg);
+.menu-usuario button:hover {
+  opacity: .5;
+  border-color: var(--accent);
 }
 
-/* VAZIO */
 
-.usuarios-vazio {
-  padding: 50px;
+/* =========================
+   TELA MENOR
+========================= */
 
-  text-align: center;
+@media (max-width: 900px) {
+  .usuarios-tabela {
+    border-radius: 12px;
+  }
 
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
+  .usuarios-tabela table {
+    min-width: 750px;
+  }
 
-.usuarios-vazio span {
-  font-size: 13px;
-  color: var(--text-secondary);
+  .usuarios-tabela th,
+  .usuarios-tabela td {
+    padding: 13px 14px;
+  }
 }

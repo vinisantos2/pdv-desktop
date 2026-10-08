@@ -1,96 +1,97 @@
-/* =========================================================
+/* =========================
    DASHBOARD
-========================================================= */
+========================= */
 
 .dashboard {
   width: 100%;
-  padding: 28px;
+  height: 100vh;
+  min-height: 100%;
+  padding: 24px;
   box-sizing: border-box;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.dashboard-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.dashboard-header h1 {
-  margin: 0;
-  font-size: 26px;
-  font-weight: 700;
-  color: #111827;
-}
-
-.dashboard-header p {
-  margin: 6px 0 0;
-  font-size: 14px;
-  color: #6b7280;
-}
-
-.dashboard-date {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 3px;
-}
+  gap: 24px;
 
-.dashboard-date span {
-  font-size: 12px;
-  color: #6b7280;
-}
-
-.dashboard-date strong {
-  font-size: 14px;
-  color: #111827;
+  background: var(--bg);
 }
 
 
-/* =========================================================
+
+/* =========================
+   ACESSO RÁPIDO
+========================= */
+
+.dashboard-quick {
+  width: 100%;
+}
+
+
+/* =========================
    CONTEÚDO
-========================================================= */
+========================= */
 
 .dashboard-content {
+  width: 100%;
+  height: 80vh;
+  background: var(--bg-content);
+  padding: 20px;
+  border-radius: 15px;
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 18px;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  gap: 20px;
+  align-items: start;
 }
 
 
-/* =========================================================
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+.dashboard-main {
+  min-width: 0;
+}
+
+
+/* =========================
+   LATERAL
+========================= */
+
+.dashboard-side {
+  min-width: 0;
+}
+
+
+/* =========================
    RESPONSIVO
-========================================================= */
+========================= */
 
 @media (max-width: 1000px) {
   .dashboard-content {
     grid-template-columns: 1fr;
   }
+
+  .dashboard-cards {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+
+
 }
 
-@media (max-width: 600px) {
+
+@media (max-width: 700px) {
   .dashboard {
-    padding: 18px;
+    padding: 16px;
+    gap: 18px;
   }
 
   .dashboard-header {
+    flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 22px;
-  }
-
-  .dashboard-header h1 {
-    font-size: 22px;
-  }
-
-  .dashboard-header p {
-    font-size: 13px;
   }
 
   .dashboard-date {
-    display: none;
+    align-items: flex-start;
   }
 }

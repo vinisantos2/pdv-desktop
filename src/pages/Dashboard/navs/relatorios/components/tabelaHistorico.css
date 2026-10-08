@@ -1,143 +1,264 @@
-/* =========================
-   CARD
-========================= */
-
 .historico-card {
   width: 100%;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  overflow: hidden;
-}
+  min-width: 0;
+  min-height: 0;
 
-/* =========================
-   CABEÇALHO
-========================= */
-
-.historico-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px 22px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.historico-header h2 {
-  margin: 0 0 4px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #1f2937;
-}
-
-.historico-header span {
-  font-size: 13px;
-  color: #64748b;
-}
-
-/* =========================
-   TOTAL DE VENDAS
-========================= */
-
-.total-vendas {
-  min-width: 70px;
+  flex: 1;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  padding: 8px 14px;
+  background: #ffffff;
 
-  background: #f8fafc;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  border: 1px solid #dfe3e8;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
-.total-vendas strong {
-  font-size: 18px;
-  line-height: 1.2;
-  color: #1f2937;
-}
-
-.total-vendas span {
-  margin-top: 2px;
-  font-size: 11px;
-  color: #64748b;
-}
 
 /* =========================
-   TABELA WRAPPER
+   HEADER
 ========================= */
 
-.tabela-wrapper {
+.historico-header {
   width: 100%;
-  overflow-x: auto;
+
+  min-height: 72px;
+
+  padding: 14px 18px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #dfe3e8;
 }
+
+
+.historico-titulo {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.historico-titulo h2 {
+  margin: 0;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  color: var(--text);
+}
+
+
+.historico-titulo span {
+  font-size: 13px;
+
+  color: var(--text-secondary);
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.total-vendas {
+  min-width: 75px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 2px;
+}
+
+
+.total-vendas strong {
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  color: var(--text);
+}
+
+
+.total-vendas span {
+  font-size: 12px;
+
+  color: var(--text-secondary);
+}
+
 
 /* =========================
    TABELA
 ========================= */
 
+.historico-tabela-container {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+
 .tabela-historico {
   width: 100%;
-  min-width: 850px;
+  min-width: 900px;
+
+  table-layout: fixed;
+
   border-collapse: collapse;
+
+  font-size: 14px;
 }
+
 
 /* =========================
    CABEÇALHO
 ========================= */
 
-.tabela-historico thead {
-  background: #f8fafc;
+.tabela-historico-header {
+  flex-shrink: 0;
+
+  background: var(--bg-tabela-header);
 }
 
-.tabela-historico th {
-  padding: 12px 16px;
 
-  border-bottom: 1px solid #e5e7eb;
+.tabela-historico-header th {
+  height: 50px;
 
-  font-size: 11px;
-  font-weight: 600;
+  padding: 0 16px;
 
-  color: #64748b;
+  box-sizing: border-box;
 
   text-align: left;
 
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #000000;
+
+  border-bottom: 1px solid #dfe3e8;
+
   white-space: nowrap;
 }
+
+
+/* =========================
+   COLUNAS
+========================= */
+
+.col-data {
+  width: 15%;
+}
+
+.col-cliente {
+  width: 25%;
+}
+
+.col-pagamento {
+  width: 17%;
+}
+
+.col-total {
+  width: 15%;
+}
+
+.col-status {
+  width: 14%;
+}
+
+.col-acao {
+  width: 14%;
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.historico-tabela-scroll {
+  width: 100%;
+
+  flex: 1;
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
 
 /* =========================
    LINHAS
 ========================= */
 
 .tabela-historico tbody tr {
-  transition: background 0.15s ease;
+  height: 62px;
+
+  background: var(--bg-tabela);
+
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
+
 .tabela-historico tbody tr:hover {
-  background: #f8fafc;
+  background: #f7f8fa;
+
+  box-shadow:
+    inset 3px 0 0 var(--bg-button);
 }
+
 
 /* =========================
    CÉLULAS
 ========================= */
 
 .tabela-historico td {
-  padding: 14px 16px;
+  padding: 8px 16px;
 
-  border-bottom: 1px solid #f1f5f9;
+  box-sizing: border-box;
 
-  font-size: 13px;
-  color: #475569;
+  border-bottom: 1px solid #edf0f2;
+
+  vertical-align: middle;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
 
   white-space: nowrap;
+
+  color: var(--text);
 }
+
 
 .tabela-historico tbody tr:last-child td {
   border-bottom: none;
 }
+
 
 /* =========================
    DATA
@@ -146,50 +267,75 @@
 .data-venda {
   display: flex;
   flex-direction: column;
+
   gap: 3px;
 }
 
+
 .data-venda strong {
   font-size: 13px;
-  color: #1f2937;
+
+  font-weight: 600;
+
+  color: var(--text);
 }
 
+
 .data-venda span {
-  font-size: 11px;
-  color: #94a3b8;
+  font-size: 12px;
+
+  color: var(--text-secondary);
 }
+
 
 /* =========================
    CLIENTE
 ========================= */
 
 .cliente-venda {
+  min-width: 0;
+
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+
+  gap: 10px;
 }
+
+
+.cliente-venda-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f1f3f5;
+
+  border: 1px solid #e0e3e7;
+
+  border-radius: 50%;
+
+  font-size: 14px;
+}
+
 
 .cliente-venda strong {
-  max-width: 180px;
-
   overflow: hidden;
+
   text-overflow: ellipsis;
 
-  font-size: 13px;
-  color: #1f2937;
+  white-space: nowrap;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: var(--text);
 }
 
-.cliente-fiado {
-  width: fit-content;
-
-  padding: 2px 6px;
-
-  background: #fff7ed;
-  border-radius: 4px;
-
-  font-size: 10px !important;
-  color: #c2410c !important;
-}
 
 /* =========================
    PAGAMENTO
@@ -197,61 +343,70 @@
 
 .pagamento-badge {
   display: inline-flex;
+
   align-items: center;
+  justify-content: center;
 
-  padding: 5px 9px;
+  min-width: 75px;
 
-  border-radius: 6px;
+  padding: 5px 10px;
 
-  font-size: 11px;
-  font-weight: 500;
+  box-sizing: border-box;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
 }
+
 
 /* DINHEIRO */
 
 .pagamento-dinheiro {
-  background: #f0fdf4;
-  color: #15803d;
+  background: #e8f7ee;
+  color: #198754;
 }
+
 
 /* PIX */
 
 .pagamento-pix {
-  background: #ecfeff;
-  color: #0e7490;
+  background: #e8f4fc;
+  color: #087ea4;
 }
+
 
 /* CARTÃO */
 
 .pagamento-cartao {
-  background: #eff6ff;
-  color: #2563eb;
+  background: #f1edff;
+  color: #6f42c1;
 }
+
 
 /* FIADO */
 
 .pagamento-fiado {
-  background: #fff7ed;
-  color: #c2410c;
+  background: #fff4df;
+  color: #b7791f;
 }
 
-/* =========================
-   ITENS
-========================= */
-
-.quantidade-itens {
-  color: #64748b;
-  font-size: 12px;
-}
 
 /* =========================
-   VALOR
+   TOTAL
 ========================= */
 
 .valor-venda {
-  font-size: 13px;
-  color: #1f2937;
+  font-size: 14px;
+
+  font-weight: 700;
+
+  color: var(--text);
 }
+
 
 /* =========================
    STATUS
@@ -259,145 +414,182 @@
 
 .status-badge {
   display: inline-flex;
+
   align-items: center;
+
   gap: 6px;
 
   padding: 5px 9px;
 
-  border-radius: 6px;
+  border-radius: 20px;
 
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
 }
+
 
 .status-dot {
   width: 6px;
   height: 6px;
 
   border-radius: 50%;
+
+  background: currentColor;
 }
+
 
 /* PAGO */
 
 .status-pago {
-  background: #f0fdf4;
-  color: #15803d;
+  background: #e8f7ee;
+
+  color: #198754;
 }
 
-.status-pago .status-dot {
-  background: #16a34a;
-}
 
 /* PENDENTE */
 
 .status-pendente {
-  background: #fff7ed;
-  color: #c2410c;
+  background: #fff4df;
+
+  color: #b7791f;
 }
 
-.status-pendente .status-dot {
-  background: #ea580c;
-}
 
 /* =========================
    BOTÃO COMPROVANTE
 ========================= */
 
-.btn-detalhes {
-  padding: 7px 11px;
+.btn-comprovante {
+  width: 100%;
+  padding: 0 12px;
 
-  border: 1px solid #dbe1e8;
-  border-radius: 6px;
+  display: inline-flex;
 
-  background: #ffffff;
+  align-items: center;
+  justify-content: center;
 
-  color: #475569;
+  gap: 6px;
+
+  border: 1px solid #dfe3e8;
+
+  border-radius: 8px;
+
+  background: var(--bg-button);
+
+  color: var(--text);
 
   font-size: 12px;
-  font-weight: 500;
+
+  font-weight: 600;
 
   cursor: pointer;
 
+  white-space: nowrap;
+
   transition:
-    background 0.15s ease,
+    background-color 0.15s ease,
     border-color 0.15s ease,
-    color 0.15s ease;
+    transform 0.1s ease;
 }
 
-.btn-detalhes:hover {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  color: #1f2937;
+
+.btn-comprovante:hover {
+  background: #f1f3f5;
+
+  border-color: #cbd1d8;
 }
+
+
+.btn-comprovante:active {
+  transform: scale(0.95);
+}
+
 
 /* =========================
-   ESTADO DA TABELA
+   ESTADO VAZIO
 ========================= */
 
-.sem-vendas {
-  height: 180px;
-  text-align: center;
-}
-
 .estado-tabela {
+  height: 180px;
+
   display: flex;
   flex-direction: column;
 
   align-items: center;
   justify-content: center;
 
-  gap: 5px;
+  gap: 6px;
 
-  height: 180px;
-
-  color: #64748b;
+  text-align: center;
 }
+
 
 .estado-tabela strong {
   font-size: 14px;
-  color: #475569;
+
+  font-weight: 600;
+
+  color: var(--text);
 }
+
 
 .estado-tabela span {
-  font-size: 12px;
-  color: #94a3b8;
+  font-size: 13px;
+
+  color: var(--text-secondary);
 }
+
 
 /* =========================
-   LOADING
+   SCROLLBAR
 ========================= */
 
-.loading-ponto {
-  font-size: 18px !important;
-  font-weight: 600;
-  color: #64748b !important;
+.historico-tabela-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
+
+
+.historico-tabela-scroll::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+
+.historico-tabela-scroll::-webkit-scrollbar-thumb {
+  background: #cbd1d8;
+
+  border-radius: 10px;
+}
+
+
+.historico-tabela-scroll::-webkit-scrollbar-thumb:hover {
+  background: #adb5bd;
+}
+
 
 /* =========================
    RESPONSIVO
 ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+
   .historico-header {
-    padding: 16px;
+    min-height: auto;
+
+    padding: 14px;
+
     align-items: flex-start;
   }
 
-  .historico-header h2 {
-    font-size: 16px;
-  }
-
-  .historico-header span {
-    font-size: 12px;
-  }
-
   .total-vendas {
-    min-width: 55px;
-    padding: 7px 10px;
+    min-width: auto;
   }
 
-  .tabela-historico th,
-  .tabela-historico td {
-    padding: 12px;
+  .tabela-historico {
+    min-width: 850px;
   }
 }

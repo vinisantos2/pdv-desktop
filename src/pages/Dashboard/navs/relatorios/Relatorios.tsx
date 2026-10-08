@@ -1,7 +1,10 @@
 import { useAuth } from "../../../../contexts/AuthContext";
-import FiltrosVenda from "./components/FiltrosVenda";
+
+import FiltrosVenda from "./components/FiltrosVenda/FiltrosVenda";
 import TabelaHistorico from "./components/TabelaHistorico";
+
 import useRelatorios from "./hooks/useRelatorios";
+
 import "./relatorios.css";
 
 export default function Relatorios() {
@@ -24,27 +27,46 @@ export default function Relatorios() {
   });
 
   return (
-    <div className="relatorios-container">
-      <div className="relatorios-header">
-        <div>
-          <h1>Histórico de vendas</h1>
-          <p>Consulte e filtre todas as vendas realizadas.</p>
+    <div className="relatorios-page">
+
+      {/* HEADER */}
+
+      <header className="relatorios-header">
+
+        <div className="relatorios-titulo">
+          <h1>Relatórios</h1>
+
+          <p>
+            Consulte e acompanhe o histórico de vendas do sistema.
+          </p>
         </div>
-      </div>
 
-      <FiltrosVenda
-        dataInicial={dataInicial}
-        setDataInicial={setDataInicial}
-        dataFinal={dataFinal}
-        setDataFinal={setDataFinal}
-        formaPagamento={formaPagamento}
-        setFormaPagamento={setFormaPagamento}
-        busca={busca}
-        setBusca={setBusca}
-        limparFiltros={limparFiltros}
-      />
+        <FiltrosVenda
+          dataInicial={dataInicial}
+          setDataInicial={setDataInicial}
+          dataFinal={dataFinal}
+          setDataFinal={setDataFinal}
+          formaPagamento={formaPagamento}
+          setFormaPagamento={setFormaPagamento}
+          busca={busca}
+          setBusca={setBusca}
+          limparFiltros={limparFiltros}
+        />
 
-      <TabelaHistorico vendas={vendasFiltradas} carregando={carregando} />
+      </header>
+
+
+      {/* CONTEÚDO */}
+
+      <main className="relatorios-content">
+
+        <TabelaHistorico
+          vendas={vendasFiltradas}
+          carregando={carregando}
+        />
+
+      </main>
+
     </div>
   );
 }

@@ -1,21 +1,26 @@
 .usuarios-resumo {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-
+  display: flex;
+  flex-direction: row;
+  background-color: var(--bg-content);
+  border-radius: 15px;
   margin-bottom: 20px;
+  justify-content: space-around;
+  padding: 20PX;
 }
 
 .usuario-card {
-  border: 1px solid var(--border);
-  background: var(--card-bg);
-  border-radius: 10px;
+  width: fit-content;
 
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
   padding: 18px;
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .usuario-card-label {

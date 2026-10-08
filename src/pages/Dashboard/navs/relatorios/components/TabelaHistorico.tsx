@@ -1,9 +1,11 @@
 import { useState } from "react";
 import type { Venda } from "../../../../../types/Venda";
 
-import "./tabelaHistorico.css";
 import { useAuth } from "../../../../../contexts/AuthContext";
 import ComprovanteVenda from "../../../../../components/comprovante/Comprovante";
+import Loading from "../../../../../components/loading/Loading";
+
+import "./tabelaHistorico.css";
 
 interface TabelaHistoricoProps {
   vendas: Venda[];
@@ -18,36 +20,19 @@ export default function TabelaHistorico({
 
   const { empresa } = useAuth();
 
-  function formatarPagamento(formaPagamento: Venda["formaPagamento"]) {
-    switch (formaPagamento) {
-      case "dinheiro":
-        return "Dinheiro";
+  function formatarPagamento(forma: Venda["formaPagamento"]) {
+    const pagamentos = {
+      dinheiro: "Dinheiro",
+      pix: "PIX",
+      cartao: "Cartão",
+      fiado: "Fiado",
+    };
 
-      case "pix":
-        return "PIX";
-
-      case "cartao":
-        return "Cartão";
-
-      case "fiado":
-        return "Fiado";
-
-      default:
-        return formaPagamento;
-    }
+    return pagamentos[forma];
   }
 
   function formatarStatus(status: Venda["statusPagamento"]) {
-    switch (status) {
-      case "pago":
-        return "Pago";
-
-      case "pendente":
-        return "Pendente";
-
-      default:
-        return status;
-    }
+    return status === "pago" ? "Pago" : "Pendente";
   }
 
   function formatarMoeda(valor: number) {
@@ -57,153 +42,142 @@ export default function TabelaHistorico({
     });
   }
 
+  if (carregando) {
+    return <Loading />;
+  }
+
   return (
-    <div className="historico-card">
-      {/* CABEÇALHO */}
+    <>
+      <section className="historico-card">
+ 
+        {/* =========================
+            TABELA
+        ========================= */}
 
-      <div className="historico-header">
-        <div>
-          <h2>Vendas realizadas</h2>
+        <div className="historico-tabela-container">
+          {/* CABEÇALHO FIXO */}
 
-          <span>Histórico de vendas do período selecionado</span>
-        </div>
-
-        <div className="total-vendas">
-          <strong>{vendas.length}</strong>
-
-          <span>{vendas.length === 1 ? "venda" : "vendas"}</span>
-        </div>
-      </div>
-
-      {/* TABELA */}
-
-      <div className="tabela-wrapper">
-        <table className="tabela-historico">
-          <thead>
-            <tr>
-              <th>Data</th>
-              <th>Cliente</th>
-              <th>Pagamento</th>
-              <th>Itens</th>
-              <th>Total</th>
-              <th>Status</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {carregando && (
+          <table className="tabela-historico tabela-historico-header">
+            <thead>
               <tr>
-                <td colSpan={7} className="sem-vendas">
-                  <div className="estado-tabela">
-                    <span className="loading-ponto">...</span>
+                <th className="col-data">Data</th>
 
-                    <span>Carregando vendas...</span>
-                  </div>
-                </td>
+                <th className="col-cliente">Cliente</th>
+
+                <th className="col-pagamento">Pagamento</th>
+
+                <th className="col-total">Total</th>
+
+                <th className="col-status">Status</th>
+
+                <th className="col-acao">Ação</th>
               </tr>
-            )}
+            </thead>
+          </table>
 
-            {!carregando && vendas.length === 0 && (
-              <tr>
-                <td colSpan={7} className="sem-vendas">
-                  <div className="estado-tabela">
-                    <strong>Nenhuma venda encontrada</strong>
+          {/* CORPO COM SCROLL */}
 
-                    <span>Não existem vendas no período selecionado.</span>
-                  </div>
-                </td>
-              </tr>
-            )}
+          <div className="historico-tabela-scroll">
+            <table className="tabela-historico">
+              <tbody>
+                {vendas.length === 0 ? (
+                  <tr>
+                    <td colSpan={6} className="estado-tabela">
+                      <div>
+                        <strong>Nenhuma venda encontrada</strong>
 
-            {!carregando &&
-              vendas.length > 0 &&
-              vendas.map((venda) => {
-                const data = venda.data.toDate();
-
-                return (
-                  <tr key={venda.id}>
-                    {/* DATA */}
-
-                    <td>
-                      <div className="data-venda">
-                        <strong>{data.toLocaleDateString("pt-BR")}</strong>
-
-                        <span>
-                          {data.toLocaleTimeString("pt-BR", {
-                            hour: "2-digit",
-                            minute: "2-digit",
-                          })}
-                        </span>
+                        <span>Não existem vendas no período selecionado.</span>
                       </div>
-                    </td>
-
-                    {/* CLIENTE */}
-
-                    <td>
-                      <div className="cliente-venda">
-                        <strong>{venda.clienteNome || "Consumidor"}</strong>
-                      </div>
-                    </td>
-
-                    {/* PAGAMENTO */}
-
-                    <td>
-                      <span
-                        className={`pagamento-badge pagamento-${venda.formaPagamento}`}
-                      >
-                        {formatarPagamento(venda.formaPagamento)}
-                      </span>
-                    </td>
-
-                    {/* ITENS */}
-
-                    <td>
-                      <span className="quantidade-itens">
-                        {venda.itens.length}{" "}
-                        {venda.itens.length === 1 ? "item" : "itens"}
-                      </span>
-                    </td>
-
-                    {/* TOTAL */}
-
-                    <td>
-                      <strong className="valor-venda">
-                        {formatarMoeda(venda.total)}
-                      </strong>
-                    </td>
-
-                    {/* STATUS */}
-
-                    <td>
-                      <span
-                        className={`status-badge status-${venda.statusPagamento}`}
-                      >
-                        <span className="status-dot" />
-
-                        {formatarStatus(venda.statusPagamento)}
-                      </span>
-                    </td>
-
-                    {/* AÇÃO */}
-
-                    <td>
-                      <button
-                        type="button"
-                        className="btn-detalhes"
-                        onClick={() => setVendaSelecionada(venda)}
-                      >
-                        Ver comprovante
-                      </button>
                     </td>
                   </tr>
-                );
-              })}
-          </tbody>
-        </table>
-      </div>
+                ) : (
+                  vendas.map((venda) => {
+                    const data = venda.data.toDate();
 
-      {/* MODAL DO COMPROVANTE */}
+                    return (
+                      <tr key={venda.id}>
+                        {/* DATA */}
+
+                        <td className="col-data">
+                          <div className="data-venda">
+                            <strong>{data.toLocaleDateString("pt-BR")}</strong>
+
+                            <span>
+                              {data.toLocaleTimeString("pt-BR", {
+                                hour: "2-digit",
+                                minute: "2-digit",
+                              })}
+                            </span>
+                          </div>
+                        </td>
+
+                        {/* CLIENTE */}
+
+                        <td className="col-cliente">
+                          <div className="cliente-venda">
+                            <div className="cliente-venda-icon">👤</div>
+
+                            <strong title={venda.clienteNome || "Consumidor"}>
+                              {venda.clienteNome || "Consumidor"}
+                            </strong>
+                          </div>
+                        </td>
+
+                        {/* PAGAMENTO */}
+
+                        <td className="col-pagamento">
+                          <span
+                            className={`pagamento-badge pagamento-${venda.formaPagamento}`}
+                          >
+                            {formatarPagamento(venda.formaPagamento)}
+                          </span>
+                        </td>
+
+                        {/* TOTAL */}
+
+                        <td className="col-total">
+                          <strong className="valor-venda">
+                            {formatarMoeda(venda.total)}
+                          </strong>
+                        </td>
+
+                        {/* STATUS */}
+
+                        <td className="col-status">
+                          <span
+                            className={`status-badge status-${venda.statusPagamento}`}
+                          >
+                            <span className="status-dot" />
+
+                            {formatarStatus(venda.statusPagamento)}
+                          </span>
+                        </td>
+
+                        {/* AÇÃO */}
+
+                        <td className="col-acao">
+                          <button
+                            type="button"
+                            className="btn-comprovante"
+                            onClick={() => setVendaSelecionada(venda)}
+                          >
+                            🧾
+                            <span>Comprovante</span>
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================
+          COMPROVANTE
+      ========================= */}
 
       {vendaSelecionada && empresa && (
         <ComprovanteVenda
@@ -212,6 +186,6 @@ export default function TabelaHistorico({
           onVoltar={() => setVendaSelecionada(null)}
         />
       )}
-    </div>
+    </>
   );
 }

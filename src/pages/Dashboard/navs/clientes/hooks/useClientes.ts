@@ -8,6 +8,7 @@ import {
   salvarCliente as salvarClienteService,
   atualizarCliente,
 } from "../../../../../services/ClienteService";
+import { toast } from "sonner";
 
 export function useClientes() {
   const { empresa } = useAuth();
@@ -76,6 +77,7 @@ export function useClientes() {
   function novoCliente() {
     setClienteEditando(null);
     setModalAberto(true);
+    console.error("AQUi");
   }
 
   // =========================================================
@@ -84,6 +86,7 @@ export function useClientes() {
 
   function editarCliente(cliente: Cliente) {
     setClienteEditando(cliente);
+    console.log(cliente);
     setModalAberto(true);
   }
 
@@ -107,8 +110,11 @@ export function useClientes() {
         setClientes((lista) => [...lista, cliente]);
       }
 
+      toast.success("Cliente salvo");
+
       fecharModal();
     } catch (error) {
+      toast.error("Erro ao salvar o cliete");
       console.error("Erro ao salvar cliente:", error);
     }
   }
@@ -140,7 +146,6 @@ export function useClientes() {
     }
   }
 
- 
   // =========================================================
   // FECHAR MODAL
   // =========================================================

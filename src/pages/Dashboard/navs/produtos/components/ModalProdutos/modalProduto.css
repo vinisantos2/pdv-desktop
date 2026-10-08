@@ -1,0 +1,407 @@
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.produto-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.produto-modal {
+  width: 100%;
+  max-width: 650px;
+
+  max-height: calc(100vh - 40px);
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: var(--bg);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.produto-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  border-bottom: 1px solid var(--border);
+
+  flex-shrink: 0;
+}
+
+.produto-modal-header h2 {
+  margin: 0;
+
+  color: var(--text-h);
+
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.produto-modal-header span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--text);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+========================================================= */
+
+.produto-modal-fechar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+.produto-modal-fechar:hover {
+  background: var(--c-bg);
+
+  color: var(--text-h);
+}
+
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.produto-modal-conteudo {
+  display: grid;
+
+  grid-template-columns: 180px minmax(0, 1fr);
+
+  gap: 20px;
+
+  padding: 20px;
+
+  overflow-y: auto;
+}
+
+
+/* =========================================================
+   IMAGEM
+========================================================= */
+
+.produto-imagem-area {
+  width: 180px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   DADOS
+========================================================= */
+
+.produto-dados {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.campo label {
+  color: var(--text-h);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.campo input {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--bg);
+
+  color: var(--text-h);
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.campo input:focus {
+  border-color: var(--accent);
+
+  box-shadow: 0 0 0 3px var(--c-bg);
+}
+
+
+/* =========================================================
+   PREÇO / ESTOQUE
+========================================================= */
+
+.produto-dados-linha {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.produto-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 16px 20px;
+
+  border-top: 1px solid var(--border);
+
+  flex-shrink: 0;
+}
+
+.produto-modal-footer button {
+  height: 40px;
+
+  padding: 0 16px;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.produto-modal-footer button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* LIMPAR */
+
+.btn-limpar {
+  border: 1px solid var(--border);
+
+  background: var(--bg);
+
+  color: var(--text-h);
+}
+
+.btn-limpar:hover {
+  background: var(--c-bg);
+}
+
+
+/* CANCELAR */
+
+.btn-cancelar {
+  border: 1px solid var(--border);
+
+  background: var(--bg);
+
+  color: var(--text-h);
+}
+
+.btn-cancelar:hover {
+  background: var(--c-bg);
+}
+
+
+/* SALVAR */
+
+.btn-salvar {
+  border: none;
+
+  background: var(--bg-button);
+
+  color: var(--text-button);
+}
+
+.btn-salvar:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .produto-modal-conteudo {
+    grid-template-columns: 140px minmax(0, 1fr);
+
+    gap: 15px;
+
+    padding: 16px;
+  }
+
+  .produto-imagem-area {
+    width: 140px;
+  }
+
+  .produto-modal-header {
+    padding: 16px;
+  }
+
+  .produto-modal-footer {
+    padding: 14px 16px;
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 550px) {
+
+  .produto-modal-overlay {
+    align-items: flex-end;
+
+    padding: 0;
+  }
+
+  .produto-modal {
+    max-width: none;
+
+    max-height: 95vh;
+
+    border-radius: 14px 14px 0 0;
+  }
+
+  .produto-modal-conteudo {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    padding: 16px;
+  }
+
+  .produto-imagem-area {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .produto-dados-linha {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-modal-footer {
+    padding: 14px 16px;
+  }
+
+  .produto-modal-footer button {
+    flex: 1;
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR PEQUENO
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .produto-modal-header {
+    padding: 14px;
+  }
+
+  .produto-modal-header h2 {
+    font-size: 17px;
+  }
+
+  .produto-modal-conteudo {
+    padding: 14px;
+  }
+
+}

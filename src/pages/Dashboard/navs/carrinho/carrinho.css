@@ -1,46 +1,114 @@
+/* =========================================================
+   CARRINHO - ESTRUTURA PRINCIPAL
+   ========================================================= */
+
 .carrinho-page {
   width: 100%;
-  min-height: 100%;
-
-  padding: 15px;
-
+  height: 100%;
+  padding: 10px;
   box-sizing: border-box;
-
-  background: #f5f6f8;
+  background: var(-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-x: hidden;
 }
 
-/* =========================
-   BUSCA + RESUMO
-========================= */
 
-.carrinho-top {
+/* =========================================================
+   ÁREA DE BUSCA
+   ========================================================= */
+
+.carrinho-busca {
   width: 100%;
-
   display: grid;
-
-  grid-template-columns: minmax(0, 1fr) 360px;
-
-  gap: 5px;
-
-  margin-bottom: 18px;
-
-  align-items: stretch;
+  grid-template-columns: 1fr;
+  box-sizing: border-box;
+  height: 10%;
 }
 
-/* =========================
-   TABELA
-========================= */
 
-.carrinho-main {
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+.carrinho-conteudo {
   width: 100%;
+  display: grid;
+  height: 60%;
+  grid-template-columns: 80% 20%;
+  gap: 10px;
+  align-items: start;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
 
-@media (max-width: 1000px) {
-  .carrinho-top {
+/* =========================================================
+   ÁREA PRINCIPAL
+   ========================================================= */
+
+.carrinho-principal {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+/* =========================================================
+   LATERAL / RESUMO DA VENDA
+   ========================================================= */
+
+.carrinho-lateral {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: sticky;
+  gap: 10px;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+/* Telas menores */
+@media (max-width: 1100px) {
+  .carrinho-conteudo {
+    grid-template-columns: minmax(0, 1fr) 320px;
+  }
+}
+
+
+/* Tablet */
+@media (max-width: 900px) {
+  .carrinho-page {
+    padding: 15px;
+  }
+
+  .carrinho-conteudo {
     grid-template-columns: 1fr;
+  }
+
+  .carrinho-lateral {
+    position: static;
+  }
+}
+
+
+/* Celular */
+@media (max-width: 600px) {
+  .carrinho-page {
+    padding: 10px;
+
+    gap: 10px;
+  }
+
+  .carrinho-conteudo {
+    gap: 10px;
+  }
+
+  .carrinho-principal {
+    gap: 10px;
   }
 }

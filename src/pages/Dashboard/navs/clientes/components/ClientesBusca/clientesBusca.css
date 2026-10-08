@@ -1,0 +1,94 @@
+/* ==============================
+   CONTAINER DA BUSCA
+============================== */
+
+.clientes-busca {
+  width: 100%;
+
+  height: 15%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  background: #becfe0;
+
+  border: 1px solid #dfe3e8;
+  border-radius: 10px;
+}
+
+
+/* ==============================
+   CAMPO DE BUSCA
+============================== */
+
+.clientes-busca-input {
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* ==============================
+   FILTRO DE STATUS
+============================== */
+
+.clientes-filtro {
+  width: 220px;
+  height: 42px;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d9dde2;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #212529;
+
+  font-size: 14px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.clientes-filtro:hover {
+  border-color: #bfc5cb;
+}
+
+
+.clientes-filtro:focus {
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* ==============================
+   RESPONSIVO
+============================== */
+
+@media (max-width: 700px) {
+  .clientes-busca {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .clientes-busca-input {
+    width: 100%;
+  }
+
+  .clientes-filtro {
+    width: 100%;
+  }
+}

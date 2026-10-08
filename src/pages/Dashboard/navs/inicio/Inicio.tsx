@@ -1,12 +1,13 @@
 import "./inicio.css";
 
-import DashboardCards from "./components/DashboardCards";
+import DashboardCards from "./components/DashboardCards/DashboardCards";
 import AcessoRapido from "./components/AcessoRapido";
-import UltimasVendas from "./components/UltimasVendas";
+import UltimasVendas from "./components/UltimasVendas/UltimasVendas";
 import EstoqueBaixo from "./components/EstoqueBaixo";
 import Loading from "../../../../components/loading/Loading";
 
 import useInicio from "./hooks/useInicio";
+import HeaderInicio from "./components/HeaderInicio/HeaderInicio";
 
 export default function Inicio() {
   const {
@@ -26,36 +27,19 @@ export default function Inicio() {
 
   return (
     <div className="dashboard">
-      {/* Cabeçalho */}
-      <header className="dashboard-header">
-        <div>
-          <h1>Olá, {usuario?.nome || "Usuário"}!</h1>
+      <HeaderInicio empresa={empresa} usuario={usuario} />
 
-          <p>Bem-vindo ao {empresa?.nome || "seu PDV"}.</p>
-        </div>
-
-        <div className="dashboard-date">
-          <span>Hoje</span>
-
-          <strong>{new Date().toLocaleDateString("pt-BR")}</strong>
-        </div>
-      </header>
-
-      {/* Indicadores */}
-      <DashboardCards
-        faturamentoHoje={faturamentoHoje}
-        vendasHoje={vendasHoje}
-        produtosCadastrados={produtos.length}
-      />
-
-      {/* Acesso rápido */}
-      <AcessoRapido />
-
-      {/* Conteúdo */}
+      {/* =========================
+          CONTEÚDO PRINCIPAL
+      ========================= */}
       <section className="dashboard-content">
-        <UltimasVendas vendas={ultimasVendas} />
+        <main className="dashboard-main">
+          <UltimasVendas vendas={ultimasVendas} />
+        </main>
 
-        <EstoqueBaixo produtos={produtosEstoqueBaixo} />
+        <aside className="dashboard-side">
+          <EstoqueBaixo produtos={produtosEstoqueBaixo} />
+        </aside>
       </section>
     </div>
   );

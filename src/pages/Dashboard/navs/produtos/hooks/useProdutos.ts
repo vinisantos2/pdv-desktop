@@ -1,7 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type { Produto } from "../../../../../types/Produto";
 import { useAuth } from "../../../../../contexts/AuthContext";
-import { excluirProduto, listarProdutos } from "../../../../../services/produtoService";
+import {
+  excluirProduto,
+  listarProdutos,
+} from "../../../../../services/produtoService";
+import { toast } from "sonner";
 
 export function useProdutos() {
   // =========================
@@ -9,6 +13,14 @@ export function useProdutos() {
   // =========================
 
   const [produtos, setProdutos] = useState<Produto[]>([]);
+
+  // =========================
+  // PESQUISAS
+  // =========================
+
+  const [buscaCodigo, setBuscaCodigo] = useState("");
+
+  const [buscaDescricao, setBuscaDescricao] = useState("");
 
   const [produtoSelecionado, setProdutoSelecionado] = useState<Produto | null>(
     null,
@@ -39,6 +51,25 @@ export function useProdutos() {
       setCarregando(false);
     }
   }, [empresaId]);
+
+  // =========================
+  // produtos filtrados
+  // =========================
+  const produtosFiltrados = useMemo(() => {
+    const codigo = buscaCodigo.trim().toLowerCase();
+
+    const descricao = buscaDescricao.trim().toLowerCase();
+
+    return produtos.filter((produto) => {
+      const correspondeCodigo =
+        !codigo || produto.codigoBarras.toLowerCase().includes(codigo);
+
+      const correspondeDescricao =
+        !descricao || produto.descricao.toLowerCase().includes(descricao);
+
+      return correspondeCodigo && correspondeDescricao;
+    });
+  }, [produtos, buscaCodigo, buscaDescricao]);
 
   // =========================
   // CARREGAR AO ABRIR
@@ -122,7 +153,11 @@ export function useProdutos() {
     produtos,
     produtoSelecionado,
     carregando,
-
+    buscaCodigo,
+    buscaDescricao,
+    produtosFiltrados,
+    setBuscaDescricao,
+    setBuscaCodigo,
     selecionarProduto,
     limparSelecao,
     produtoSalvo,

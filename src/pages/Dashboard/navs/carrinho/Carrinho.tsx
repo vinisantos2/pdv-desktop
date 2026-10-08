@@ -1,30 +1,36 @@
-import "./carrinho.css";
-
-import TabelaVenda from "./components/TabelaVenda";
-import ResumoVenda from "./components/ResumoVenda";
-import { useCarrinho } from "./hooks/useCarrinho";
 import { useState } from "react";
+import "./carrinho.css";
+import BuscaProduto from "./components/BuscaProduto/BuscaProduto";
+import ProdutosRapidos from "./components/ProdutosRapidos/ProdutosRapidos";
+import ResumoVenda from "./components/ResumoVenda/ResumoVenda";
+import TabelaVenda from "./components/TabelaVenda/TabelaVenda";
+import UltimoProduto from "./components/UltimoProduto/UltimoProduto";
+import { useCarrinho } from "./hooks/useCarrinho";
 import ModalFinalizarVenda from "./components/ModalFinalizarVenda";
 import type { Venda } from "../../../../types/Venda";
-import ComprovanteVenda from "../../../../components/comprovante/Comprovante";
-import { useAuth } from "../../../../contexts/AuthContext";
-import ProdutoBusca from "./components/ProdutoBusca ";
 
 export default function Carrinho() {
-  const {
-    produtos,
-    itensVenda,
-    adicionarProduto,
-    alterarQuantidade,
-    removerItem,
-    limparVenda,
-  } = useCarrinho();
-
   const [modalAberto, setModalAberto] = useState(false);
 
   const [comprovanteVenda, setComprovanteVenda] = useState<Venda | null>(null);
 
-  const { empresa } = useAuth();
+  const {
+    produtos,
+    produtosFiltrados,
+    adicionarProduto,
+    buscaCodigo,
+    setBuscaCodigo,
+    buscaNome,
+    setBuscaNome,
+    buscarPorCodigo,
+    itensVenda,
+    alterarQuantidade,
+    carregando,
+    removerItem,
+    limparVenda,
+    ultimoProduto,
+    quantidadeUltimoProduto,
+  } = useCarrinho();
 
   function finalizarVenda(venda?: Venda) {
     // Fecha o modal
@@ -39,48 +45,54 @@ export default function Carrinho() {
       setComprovanteVenda(venda);
     }
   }
-
   return (
     <div className="carrinho-page">
-      {/* ÁREA SUPERIOR */}
-      <div className="carrinho-top">
-        <ProdutoBusca
-          produtos={produtos}
-          onSelecionarProduto={adicionarProduto}
-        />
-
-        <ResumoVenda
-          abrirModal={() => setModalAberto(true)}
-          itens={itensVenda}
+      <div className="carrinho-busca">
+        <BuscaProduto
+          buscaCodigo={buscaCodigo}
+          setBuscaCodigo={setBuscaCodigo}
+          buscaNome={buscaNome}
+          setBuscaNome={setBuscaNome}
+          buscarPorCodigo={buscarPorCodigo}
         />
       </div>
 
-      {/* TABELA */}
-      <div className="carrinho-main">
-        <TabelaVenda
-          itens={itensVenda}
-          onAlterarQuantidade={alterarQuantidade}
-          onRemoverItem={removerItem}
-          onLimparVenda={limparVenda}
-        />
+      <ProdutosRapidos
+        carregando={carregando}
+        produtos={buscaNome.length > 0 ? produtosFiltrados : produtos}
+        onAdicionarProduto={adicionarProduto}
+      />
+
+      <div className="carrinho-conteudo">
+        <main className="carrinho-principal">
+          <TabelaVenda
+            itens={itensVenda}
+            onAlterarQuantidade={alterarQuantidade}
+            onRemoverItem={removerItem}
+            onLimparVenda={limparVenda}
+            adicionarProduto={adicionarProduto}
+            produtos={produtos}
+          />
+        </main>
+
+        <aside className="carrinho-lateral">
+          <UltimoProduto
+            produto={ultimoProduto}
+            quantidade={quantidadeUltimoProduto}
+          />
+          <ResumoVenda
+            abrirModal={() => setModalAberto(true)}
+            itens={itensVenda}
+          />
+        </aside>
       </div>
 
-      {/* MODAL DE FINALIZAÇÃO */}
       {modalAberto && (
         <ModalFinalizarVenda
-          aberto={modalAberto}
           itens={itensVenda}
           onFechar={() => setModalAberto(false)}
           onVendaFinalizada={finalizarVenda}
-        />
-      )}
-
-      {/* COMPROVANTE */}
-      {comprovanteVenda && empresa && (
-        <ComprovanteVenda
-          empresa={empresa}
-          venda={comprovanteVenda}
-          onVoltar={() => setComprovanteVenda(null)}
+          aberto={modalAberto}
         />
       )}
     </div>

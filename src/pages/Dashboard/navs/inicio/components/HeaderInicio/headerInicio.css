@@ -1,0 +1,49 @@
+/* =========================
+   CABEÇALHO
+========================= */
+
+.dashboard-header {
+    width: 100%;
+    height: 20vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-content);
+    padding: 15px;
+    border-radius: 15px;
+    gap: 20px;
+}
+
+.dashboard-welcome {
+    min-width: 0;
+}
+
+.dashboard-welcome h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.dashboard-welcome p {
+    margin: 6px 0 0;
+    color: var(--text-secondary);
+}
+
+
+.dashboard-date {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 4px;
+}
+
+.dashboard-date span {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.dashboard-date strong {
+    font-size: 15px;
+}

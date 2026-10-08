@@ -1,0 +1,376 @@
+.produtos-lista {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe3e8;
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================
+   TABELA
+========================= */
+
+.produtos-tabela {
+  width: 100%;
+  min-width: 900px;
+
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.produtos-tabela-header {
+  background: var(--bg-tabela-header);
+}
+
+.produtos-tabela-header th {
+  height: 50px;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  text-align: left;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #000000;
+
+  border-bottom: 1px solid #dfe3e8;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   LARGURA DAS COLUNAS
+========================= */
+
+.col-imagem {
+  width: 90px;
+}
+
+.col-codigo {
+  width: 18%;
+}
+
+.col-descricao {
+  width: 32%;
+}
+
+.col-preco {
+  width: 14%;
+}
+
+.col-estoque {
+  width: 12%;
+}
+
+.col-acoes {
+  width: 120px;
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.produtos-tabela-scroll {
+  width: 100%;
+
+  height: 420px;
+    min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+
+/* =========================
+   LINHAS
+========================= */
+
+.produtos-tabela tbody tr {
+  height: 62px;
+
+  background: var(--bg-tabela);
+
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.produtos-tabela tbody tr:hover {
+  background: #f7f8fa;
+
+  box-shadow: inset 3px 0 0 var(--bg-button);
+}
+
+
+/* =========================
+   CÉLULAS
+========================= */
+
+.produtos-tabela td {
+  padding: 8px 16px;
+
+  box-sizing: border-box;
+
+  color: var(--text);
+
+  border-bottom: 1px solid #edf0f2;
+
+  vertical-align: middle;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.produtos-tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.produto-sem-imagem {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f3f4f6;
+
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+
+  color: #8a9199;
+
+  font-size: 9px;
+
+  text-align: center;
+}
+
+
+/* =========================
+   CÓDIGO
+========================= */
+
+.produto-codigo {
+  color: #070809;
+
+  font-size: 13px;
+
+  font-family: monospace;
+}
+
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.produto-descricao {
+  display: block;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  font-weight: 500;
+
+  color: var(--text);
+}
+
+
+/* =========================
+   PREÇO
+========================= */
+
+.produto-preco {
+  font-weight: 600;
+
+  color: var(--text);
+}
+
+
+/* =========================
+   ESTOQUE
+========================= */
+
+.produto-estoque {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 42px;
+
+  padding: 5px 9px;
+
+  box-sizing: border-box;
+
+  border-radius: 6px;
+
+  background: #e8f7ee;
+
+  color: #198754;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.produto-estoque-zero {
+  background: #fdecec;
+
+  color: #dc3545;
+}
+
+
+/* =========================
+   AÇÕES
+========================= */
+
+.produto-acoes {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.btn-editar-produto,
+.btn-excluir-produto {
+  width: 34px;
+  height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+
+/* EDITAR */
+
+.btn-editar-produto {
+  background: #ffffff;
+
+  border: 1px solid #dfe3e8;
+}
+
+.btn-editar-produto:hover {
+  background: #f1f3f5;
+
+  border-color: #cbd1d8;
+}
+
+
+/* EXCLUIR */
+
+.btn-excluir-produto {
+  background: #ffffff;
+
+  border: 1px solid #f0d4d4;
+}
+
+.btn-excluir-produto:hover {
+  background: #fff2f2;
+
+  border-color: #e5bcbc;
+}
+
+
+/* CLICK */
+
+.btn-editar-produto:active,
+.btn-excluir-produto:active {
+  transform: scale(0.94);
+}
+
+
+/* =========================
+   SEM REGISTROS
+========================= */
+
+.produtos-sem-registros {
+  height: 120px;
+
+  text-align: center;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.produtos-tabela-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.produtos-tabela-scroll::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.produtos-tabela-scroll::-webkit-scrollbar-thumb {
+  background: #cbd1d8;
+
+  border-radius: 10px;
+}
+
+.produtos-tabela-scroll::-webkit-scrollbar-thumb:hover {
+  background: #adb5bd;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+  .produtos-tabela-scroll {
+    height: 350px;
+  }
+}
