@@ -1,0 +1,134 @@
+.modal-atualizacao-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(3, 7, 18, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.modal-atualizacao-obrigatorio {
+  width: 100%;
+  max-width: 440px;
+  padding: 30px;
+  border: 1px solid #374151;
+  border-radius: 16px;
+  background: #111827;
+  color: #f9fafb;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  animation: modal-atualizacao-entrada 0.2s ease-out;
+}
+
+.modal-atualizacao-icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 18px;
+  border: 1px solid #7f1d1d;
+  border-radius: 50%;
+  background: #450a0a;
+  color: #fca5a5;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.modal-atualizacao-obrigatorio h2 {
+  margin: 0 0 12px;
+  color: #f9fafb;
+  font-size: 22px;
+}
+
+.modal-atualizacao-obrigatorio p {
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.modal-atualizacao-versao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 22px 0;
+  padding: 14px;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background: #1f2937;
+  text-align: left;
+}
+
+.modal-atualizacao-versao span {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.modal-atualizacao-versao strong {
+  color: #93c5fd;
+  font-size: 15px;
+}
+
+.modal-atualizacao-mensagem {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #1f2937;
+  color: #e5e7eb;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.modal-atualizacao-aviso {
+  margin-bottom: 22px;
+}
+
+.modal-atualizacao-botao {
+  width: 100%;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-atualizacao-botao:hover {
+  background: #1d4ed8;
+}
+
+.modal-atualizacao-botao:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+@keyframes modal-atualizacao-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-atualizacao-obrigatorio {
+    padding: 24px 20px;
+  }
+
+  .modal-atualizacao-obrigatorio h2 {
+    font-size: 20px;
+  }
+}
