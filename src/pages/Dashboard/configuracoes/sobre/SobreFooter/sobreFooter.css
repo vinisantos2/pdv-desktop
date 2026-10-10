@@ -1,0 +1,24 @@
+.sobre-app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--borda, #e5e7eb);
+  color: var(--texto-secundario, #6b7280);
+  font-size: 12px;
+}
+
+.sobre-app-footer span {
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .sobre-app-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+  }
+}

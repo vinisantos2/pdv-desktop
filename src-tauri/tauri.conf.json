@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "VS-Tech PDV",
-  "version": "1.0.0",
+  "version": "1.0.9",
   "identifier": "com.vstech.pdv",
   "build": {
     "frontendDist": "../dist",

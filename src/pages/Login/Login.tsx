@@ -7,7 +7,7 @@ import Loading from "../../components/loading/Loading";
 import Rodape from "../../components/rodape/Rodape";
 import InputPadrao from "../../components/input/InputPadrao";
 import "./login.css";
-
+import { VERSAO_APP } from "../../constanst/app";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -82,7 +82,7 @@ export default function Login() {
             </p>
           </div>
 
-          <span className="brand-version">PDV • v1.0.0</span>
+          <span className="brand-version">PDV • v {VERSAO_APP}</span>
         </section>
 
         <section className="login-form-section">

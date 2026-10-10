@@ -1,8 +1,9 @@
 /* ========================= LAYOUT PRINCIPAL ========================= */
 .main-layout {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
+  overflow: hidden;
   background: #f5f6f8;
 }
 
@@ -10,15 +11,23 @@
 .main-area {
   flex: 1;
   min-width: 0;
-  min-height: 100vh;
+  min-height: 0;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 /* ========================= CONTEÚDO DAS PÁGINAS ========================= */
 .main-content {
   flex: 1;
   min-width: 0;
+  min-height: 0;
   overflow: auto;
   background: var(--bg);
+}
+
+/* ========================= FOOTER ========================= */
+.footer-dashboard {
+  flex-shrink: 0;
 }
