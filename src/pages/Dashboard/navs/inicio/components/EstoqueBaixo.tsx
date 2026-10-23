@@ -1,11 +1,14 @@
-import './estoqueBaixo.css'
+import "./estoqueBaixo.css";
 import type { Produto } from "../../../../../types/Produto";
+import { useNavigate } from "react-router-dom";
+import { ROTAS } from "../../../../../constanst/rotas";
 
 interface EstoqueBaixoProps {
   produtos: Produto[];
 }
 
 export default function EstoqueBaixo({ produtos }: EstoqueBaixoProps) {
+  const rooute = useNavigate();
   return (
     <div className="dashboard-panel">
       <div className="panel-header">
@@ -22,7 +25,10 @@ export default function EstoqueBaixo({ produtos }: EstoqueBaixoProps) {
           <small>Todos os produtos estão com estoque adequado.</small>
         </div>
       ) : (
-        <div className="estoque-lista">
+        <div
+          onClick={() => rooute(ROTAS.DASHBOARD.PRODUTOS)}
+          className="estoque-lista"
+        >
           {produtos.map((produto) => (
             <div className="estoque-item" key={produto.codigoBarras}>
               <div>

@@ -1,0 +1,140 @@
+/* recursos.css */
+
+.plano-recursos {
+  width: 100%;
+  padding: 24px;
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+/* Cabeçalho */
+
+.plano-recursos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.plano-recursos-header h2 {
+  margin: 0;
+  color: var(--text-primary, #111827);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.plano-recursos-header p {
+  margin: 7px 0 0;
+  color: var(--text-secondary, #6b7280);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Lista de recursos */
+
+.recursos-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* Item */
+
+.recurso {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 15px 16px;
+  background: var(--bg-secondary, #f9fafb);
+  border: 1px solid var(--border-color, #edf0f4);
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.recurso:hover {
+  background: var(--bg-card, #ffffff);
+  border-color: var(--primary-color, #2563eb);
+  transform: translateY(-1px);
+}
+
+/* Ícone de confirmação */
+
+.recurso-check {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--success-color, #15803d);
+  background: var(--success-bg, #dcfce7);
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* Texto */
+
+.recurso > span:last-child {
+  min-width: 0;
+  color: var(--text-primary, #374151);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .plano-recursos {
+    padding: 20px;
+  }
+
+  .recursos-lista {
+    gap: 10px;
+  }
+
+  .recurso {
+    padding: 13px;
+    gap: 10px;
+  }
+}
+
+/* Celular */
+
+@media (max-width: 520px) {
+  .plano-recursos {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .plano-recursos-header {
+    margin-bottom: 18px;
+  }
+
+  .plano-recursos-header h2 {
+    font-size: 17px;
+  }
+
+  .plano-recursos-header p {
+    font-size: 13px;
+  }
+
+  .recursos-lista {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .recurso {
+    padding: 12px;
+  }
+}

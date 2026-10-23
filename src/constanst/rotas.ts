@@ -29,6 +29,7 @@ export const ROTAS = {
       PERMISSOES: "/Dashboard/Configuracoes/Permissoes",
 
       SOBRE: "/Dashboard/Configuracoes/Sobre",
+      IMPRESSORA: "/Dashboard/Configuracoes/impressora",
     },
   },
 } as const;

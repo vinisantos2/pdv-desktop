@@ -1,380 +1,141 @@
+/* plano.css */
+
 .plano-page {
-  padding: 28px;
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: 100%;
+  min-width: 0;
+  padding: 24px;
+
+  box-sizing: border-box;
+  color: var(--text-primary, #111827);
 }
 
-/* =========================
-   HEADER
-========================= */
+/* Cabeçalho da página */
 
 .plano-header {
-  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+
+  width: 100%;
+  min-width: 0;
 }
 
 .plano-header h1 {
   margin: 0;
 
+  color: var(--text-primary, #111827);
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
 }
 
 .plano-header p {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
 
+  color: var(--text-secondary, #6b7280);
   font-size: 14px;
-  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
-/* =========================
-   PLANO ATUAL
-========================= */
+/* Evita que os componentes ultrapassem a página */
 
-.plano-atual {
-  padding: 22px;
-
-  border: 1px solid var(--border);
-  border-radius: 12px;
-
-  background: var(--card-bg);
+.plano-page>section {
+  width: 100%;
+  min-width: 0;
 }
 
-.plano-atual-conteudo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/* Botão de tentar novamente */
 
-.plano-label {
-  display: block;
-
-  margin-bottom: 6px;
-
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-.plano-info h2 {
-  margin: 0;
-
-  font-size: 21px;
-}
-
-.plano-info p {
-  margin: 7px 0 0;
-
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-.plano-preco {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-}
-
-.plano-preco strong {
-  font-size: 27px;
-}
-
-.plano-preco span {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-.plano-status {
+.plano-page .btn-plano {
   display: inline-flex;
-  align-items: center;
-  gap: 7px;
-
-  margin-top: 18px;
-
-  padding: 6px 10px;
-
-  border-radius: 6px;
-
-  background: rgba(34, 197, 94, 0.1);
-
-  color: #16a34a;
-
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.status-ponto {
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-
-  background: #22c55e;
-}
-
-/* =========================
-   GRID
-========================= */
-
-.plano-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  gap: 16px;
-
-  margin-top: 16px;
-}
-
-.plano-card {
-  padding: 20px;
-
-  border: 1px solid var(--border);
-  border-radius: 10px;
-
-  background: var(--card-bg);
-}
-
-.plano-card-header h3 {
-  margin: 0;
-
-  font-size: 15px;
-}
-
-.plano-card-header p {
-  margin: 5px 0 0;
-
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-/* =========================
-   COBRANÇA
-========================= */
-
-.cobranca-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin: 22px 0;
-}
-
-.cobranca-info strong {
-  font-size: 14px;
-}
-
-.cobranca-info span {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-/* =========================
-   PAGAMENTO
-========================= */
-
-.pagamento-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  margin: 22px 0;
-}
-
-.cartao-icon {
-  width: 40px;
-  height: 40px;
-
-  display: flex;
   align-items: center;
   justify-content: center;
 
+  min-height: 42px;
+  padding: 0 18px;
+
+  color: #ffffff;
+  background: var(--primary-color, #2563eb);
+  border: none;
   border-radius: 8px;
 
-  background: var(--accent-bg);
-}
-
-.pagamento-info strong {
-  display: block;
-
-  font-size: 13px;
-}
-
-.pagamento-info span {
-  display: block;
-
-  margin-top: 3px;
-
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-/* =========================
-   BOTÕES
-========================= */
-
-.btn-plano {
-  width: 100%;
-
-  padding: 10px 14px;
-
-  border: 0;
-  border-radius: 7px;
-
-  background: var(--primary);
-  color: white;
-
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 
   cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
-.btn-plano:hover {
-  opacity: 0.9;
+.plano-page .btn-plano:hover {
+  background: var(--primary-hover, #1d4ed8);
 }
 
-.btn-plano.secundario {
-  border: 1px solid var(--border);
-
-  background: transparent;
-  color: inherit;
+.plano-page .btn-plano:active {
+  transform: scale(0.98);
 }
 
-.btn-plano.secundario:hover {
-  background: var(--accent-bg);
+.plano-page .btn-plano:focus-visible {
+  outline: 3px solid var(--focus-color, #93c5fd);
+  outline-offset: 3px;
 }
 
-/* =========================
-   RECURSOS
-========================= */
+/* Tablet */
 
-.plano-recursos,
-.plano-historico {
-  margin-top: 16px;
-
-  padding: 20px;
-
-  border: 1px solid var(--border);
-  border-radius: 10px;
-
-  background: var(--card-bg);
-}
-
-.plano-recursos-header {
-  margin-bottom: 20px;
-}
-
-.plano-recursos-header h2 {
-  margin: 0;
-
-  font-size: 16px;
-}
-
-.plano-recursos-header p {
-  margin: 5px 0 0;
-
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-.recursos-lista {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 12px;
-}
-
-.recurso {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-
-  padding: 11px;
-
-  border-radius: 7px;
-
-  background: var(--accent-bg);
-
-  font-size: 13px;
-}
-
-.recurso-check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 20px;
-  height: 20px;
-
-  border-radius: 50%;
-
-  background: rgba(34, 197, 94, 0.12);
-
-  color: #16a34a;
-
-  font-size: 11px;
-  font-weight: 700;
-}
-
-/* =========================
-   HISTÓRICO
-========================= */
-
-.pagamentos-tabela {
-  width: 100%;
-}
-
-.pagamento-linha {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr 100px;
-
-  align-items: center;
-
-  padding: 13px 0;
-
-  border-top: 1px solid var(--border);
-
-  font-size: 13px;
-}
-
-.pagamento-titulo {
-  border-top: 0;
-
-  padding-top: 0;
-
-  color: var(--text-secondary);
-
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.pagamento-status {
-  justify-self: start;
-
-  padding: 5px 9px;
-
-  border-radius: 6px;
-
-  background: rgba(34, 197, 94, 0.1);
-
-  color: #16a34a;
-
-  font-size: 11px;
-  font-weight: 600;
-}
-
-/* =========================
-   RESPONSIVO
-========================= */
-
-@media (max-width: 800px) {
-  .plano-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .plano-page {
+    gap: 20px;
+    padding: 20px;
   }
 
-  .recursos-lista {
-    grid-template-columns: 1fr;
+  .plano-header h1 {
+    font-size: 23px;
+  }
+}
+
+/* Celular */
+
+@media (max-width: 520px) {
+  .plano-page {
+    gap: 16px;
+    padding: 14px;
   }
 
-  .pagamento-linha {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+  .plano-header {
+    align-items: flex-start;
+  }
+
+  .plano-header h1 {
+    font-size: 21px;
+    letter-spacing: -0.4px;
+  }
+
+  .plano-header p {
+    margin-top: 6px;
+    font-size: 13px;
+  }
+}
+
+/* Telas muito estreitas */
+
+@media (max-width: 360px) {
+  .plano-page {
+    padding: 10px;
+    gap: 14px;
+  }
+
+  .plano-header h1 {
+    font-size: 19px;
   }
 }

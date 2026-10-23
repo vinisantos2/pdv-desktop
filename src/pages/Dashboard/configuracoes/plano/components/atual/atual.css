@@ -1,0 +1,146 @@
+/* atual.css */
+
+.plano-atual {
+    width: 100%;
+    padding: 28px;
+    background: var(--bg-card, #ffffff);
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+/* Conteúdo principal */
+
+.plano-atual-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* Informações do plano */
+
+.plano-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.plano-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--text-secondary, #6b7280);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.plano-info h2 {
+    margin: 0;
+    color: var(--text-primary, #111827);
+    font-size: 26px;
+    font-weight: 750;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+}
+
+.plano-info p {
+    margin: 10px 0 0;
+    color: var(--text-secondary, #6b7280);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Preço */
+
+.plano-preco {
+    display: flex;
+    flex-shrink: 0;
+    align-items: baseline;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.plano-preco strong {
+    color: var(--text-primary, #111827);
+    font-size: 30px;
+    font-weight: 750;
+    letter-spacing: -1px;
+}
+
+.plano-preco span {
+    color: var(--text-secondary, #6b7280);
+    font-size: 14px;
+}
+
+/* Status */
+
+.plano-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 8px 12px;
+    color: var(--success-color, #15803d);
+    background: var(--success-bg, #dcfce7);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Indicador */
+
+.status-ponto {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    background: currentColor;
+    border-radius: 50%;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+    .plano-atual {
+        padding: 22px;
+    }
+
+    .plano-info h2 {
+        font-size: 23px;
+    }
+
+    .plano-preco strong {
+        font-size: 26px;
+    }
+}
+
+/* Celular */
+
+@media (max-width: 520px) {
+    .plano-atual {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .plano-atual-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .plano-info h2 {
+        font-size: 22px;
+    }
+
+    .plano-info p {
+        font-size: 13px;
+    }
+
+    .plano-preco strong {
+        font-size: 28px;
+    }
+
+    .plano-status {
+        margin-top: 18px;
+    }
+}

@@ -2,6 +2,8 @@ import "./comprovante.css";
 
 import type { Empresa } from "../../types/Empresa";
 import type { Venda } from "../../types/Venda";
+import { imprimirComprovante } from "../../services/impressao/configuracaoImpressao";
+import { toast } from "sonner";
 
 interface ComprovanteVendaProps {
   venda: Venda;
@@ -19,8 +21,36 @@ export default function ComprovanteVenda({
     ? new Date(venda.dataPagamento.seconds * 1000)
     : null;
 
-  function imprimir() {
-    window.print();
+  async function imprimir() {
+    try {
+      await imprimirComprovante({
+        empresa: {
+          nome: empresa.nome,
+          cnpj: empresa.cnpj,
+        },
+        venda: {
+          id: venda.id,
+          data: data.toLocaleString("pt-BR"),
+          dataPagamento: dataPagamento?.toLocaleString("pt-BR") ?? null,
+          clienteNome: venda.clienteNome,
+          itens: venda.itens.map((item) => ({
+            quantidade: item.quantidade,
+            descricao: item.descricao,
+            valor: item.valor,
+          })),
+          total: venda.total,
+          formaPagamento: venda.formaPagamento,
+          statusPagamento: venda.statusPagamento,
+        },
+      });
+
+      toast.success("Comprovante enviado para a impressora!");
+      onVoltar();
+    } catch (erro) {
+      console.error("Erro ao imprimir comprovante:", erro);
+
+      toast.error(erro instanceof Error ? erro.message : String(erro));
+    }
   }
 
   async function compartilhar() {
@@ -75,7 +105,7 @@ Obrigado pela sua compra!
 
     await navigator.clipboard.writeText(texto);
 
-    alert("Comprovante copiado para a área de transferência.");
+    toast.success("Comprovante copiado para a área de transferência.");
   }
 
   return (
@@ -309,4 +339,3 @@ Obrigado pela sua compra!
     </div>
   );
 }
-

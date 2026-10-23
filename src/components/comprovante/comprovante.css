@@ -1,8 +1,10 @@
+/* =====================================
+   MODAL DO COMPROVANTE
+===================================== */
+
 .comprovante-overlay {
   position: fixed;
   inset: 0;
-
-
   z-index: 1000;
 
   display: flex;
@@ -10,7 +12,6 @@
   justify-content: center;
 
   padding: 24px;
-
   background: rgba(15, 23, 42, 0.55);
 }
 
@@ -21,14 +22,11 @@
   display: flex;
   flex-direction: column;
 
-  background: #ffffff;
-
+  background: #fff;
   border-radius: 14px;
-
   overflow: hidden;
 
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
 .comprovante-modal-header {
@@ -37,16 +35,13 @@
   justify-content: space-between;
 
   padding: 16px 20px;
-
   border-bottom: 1px solid #e5e7eb;
 }
 
 .comprovante-modal-header h2 {
   margin: 0;
-
   font-size: 16px;
   font-weight: 600;
-
   color: #1f2937;
 }
 
@@ -56,12 +51,10 @@
 
   border: none;
   border-radius: 6px;
-
   background: transparent;
 
   font-size: 24px;
   color: #64748b;
-
   cursor: pointer;
 }
 
@@ -71,10 +64,11 @@
 
 .comprovante-modal-body {
   flex: 1;
-
-  overflow-y: auto;
+  min-height: 0;
 
   padding: 24px;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   background: #f8fafc;
 }
@@ -82,194 +76,182 @@
 .comprovante-modal-footer {
   display: flex;
   justify-content: flex-end;
-
+  flex-wrap: wrap;
   gap: 10px;
 
   padding: 14px 20px;
-
   border-top: 1px solid #e5e7eb;
-
-  background: #ffffff;
+  background: #fff;
 }
 
 .comprovante-btn-voltar,
 .comprovante-btn-imprimir {
-  height: 40px;
-
+  min-height: 40px;
   padding: 0 16px;
 
   border-radius: 8px;
-
   font-size: 13px;
   font-weight: 600;
-
   cursor: pointer;
 }
 
 .comprovante-btn-voltar {
   border: 1px solid #d1d5db;
-
-  background: #ffffff;
-
+  background: #fff;
   color: #475569;
 }
 
 .comprovante-btn-imprimir {
   border: none;
-
   background: #16a34a;
-
-  color: #ffffff;
+  color: #fff;
 }
 
-/* ================================
-   COMPROVANTE
-================================ */
+
+/* =====================================
+   RECIBO
+===================================== */
 
 .comprovante {
-  width: 80mm;
+  width: 58mm;
   max-width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 3mm;
 
   box-sizing: border-box;
 
-  background: #ffffff;
-  color: #111827;
+  background: #fff;
+  color: #000;
 
   font-family: "Courier New", Courier, monospace;
   font-size: 12px;
-  line-height: 1.4;
+  font-weight: 700;
+  line-height: 1.35;
 
   text-align: left;
+
+  -webkit-font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+}
+
+.comprovante * {
+  box-sizing: border-box;
+  color: #000;
 }
 
 
-/* ================================
+/* =====================================
    EMPRESA
-================================ */
+===================================== */
 
 .comprovante-empresa {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 4px;
 
   text-align: center;
 }
 
 .comprovante-logo {
-  width: 64px !important;
-  height: 64px !important;
-
-  max-width: 64px !important;
-  max-height: 64px !important;
+  width: 48px !important;
+  height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
 
   object-fit: contain !important;
-
-  margin: 0 auto 8px !important;
+  margin: 0 auto 5px !important;
 }
 
 .comprovante-empresa h2 {
   margin: 0;
-
-  font-size: 16px;
-  font-weight: 700;
-
-  color: #111827;
+  font-size: 15px;
+  font-weight: 900;
+  overflow-wrap: anywhere;
 }
 
 .comprovante-empresa span {
-  font-size: 11px;
-  color: #4b5563;
-}
-
-
-/* ================================
-   LINHAS
-================================ */
-
-.comprovante-linha {
-  width: 100%;
-
-  margin: 12px 0;
-
-  border-top: 1px dashed #9ca3af;
-}
-
-
-/* ================================
-   TÍTULO
-================================ */
-
-.comprovante-titulo {
-  width: 100%;
-
-  margin: 10px 0;
-
-  text-align: center;
-
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 700;
 }
 
 
-/* ================================
-   INFORMAÇÕES
-================================ */
+/* =====================================
+   SEPARADORES
+===================================== */
+
+.comprovante-linha {
+  width: 100%;
+  margin: 8px 0;
+  border-top: 1px dashed #000;
+}
+
+
+/* =====================================
+   TÍTULO
+===================================== */
+
+.comprovante-titulo {
+  width: 100%;
+  margin: 8px 0;
+
+  text-align: center;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* =====================================
+   INFORMAÇÕES DA VENDA
+===================================== */
 
 .comprovante-info {
   display: flex;
   flex-direction: column;
-
   gap: 5px;
 }
 
-.comprovante-info > div {
+.comprovante-info>div {
   display: flex;
   justify-content: space-between;
-
-  gap: 10px;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .comprovante-info span {
-  color: #6b7280;
+  flex-shrink: 0;
+  font-weight: 700;
 }
 
 .comprovante-info strong {
-  color: #111827;
-
   text-align: right;
-
-  word-break: break-word;
+  font-weight: 900;
+  overflow-wrap: anywhere;
 }
 
 
-/* ================================
-   ITENS
-================================ */
+/* =====================================
+   PRODUTOS
+===================================== */
 
 .comprovante-itens {
   width: 100%;
 }
 
+
 .comprovante-item-header,
 .comprovante-item {
   display: grid;
-
-  grid-template-columns: 35px minmax(0, 1fr) 80px;
-
-  gap: 6px;
-
+  grid-template-columns: 22px minmax(0, 1fr) 58px;
+  column-gap: 2px;
   width: 100%;
+  min-width: 0;
 }
 
 .comprovante-item-header {
-  margin-bottom: 8px;
-
-  font-size: 10px;
-  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 9px;
+  font-weight: 900;
 }
 
 .comprovante-item-header span:last-child {
@@ -277,173 +259,121 @@
 }
 
 .comprovante-item {
-  margin-bottom: 7px;
+  margin-bottom: 6px;
+  font-size: 10px;
+  font-weight: 700;
+}
 
-  font-size: 11px;
+.comprovante-item span {
+  min-width: 0;
 }
 
 .comprovante-item span:nth-child(2) {
   overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .comprovante-item span:last-child {
   text-align: right;
   white-space: nowrap;
+  font-weight: 900;
 }
 
 
-/* ================================
-   TOTAL
-================================ */
+
+
+/* =====================================
+   TOTAIS
+===================================== */
 
 .comprovante-total {
   display: flex;
   flex-direction: column;
-
   gap: 6px;
 }
 
-.comprovante-total > div {
+.comprovante-total>div {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 6px;
+}
 
-  gap: 10px;
+.comprovante-total strong {
+  font-weight: 900;
+  text-align: right;
 }
 
 .comprovante-total .total-final {
-  margin-top: 5px;
-  padding-top: 8px;
+  margin-top: 4px;
+  padding-top: 7px;
 
-  border-top: 1px solid #111827;
+  border-top: 2px solid #000;
 
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 900;
 }
 
 
-/* ================================
-   PAGAMENTO
-================================ */
+/* =====================================
+   PAGAMENTO E STATUS
+===================================== */
 
 .comprovante-pagamento,
 .comprovante-status {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 6px;
 
-  gap: 10px;
-
-  margin-bottom: 6px;
-}
-
-.comprovante-pagamento span,
-.comprovante-status span {
-  color: #6b7280;
+  margin-bottom: 5px;
+  font-weight: 700;
 }
 
 .comprovante-pagamento strong,
 .comprovante-status strong {
-  font-weight: 700;
+  text-align: right;
+  font-weight: 900;
 }
 
 
-/* ================================
-   RODAPÉ DO COMPROVANTE
-================================ */
+/* =====================================
+   RODAPÉ
+===================================== */
 
 .comprovante-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 4px;
 
-  margin-top: 18px;
-
+  margin-top: 12px;
   text-align: center;
 }
 
 .comprovante-footer strong {
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 900;
 }
 
 .comprovante-footer span {
-  font-size: 11px;
+  font-size: 10px;
+  font-weight: 700;
+}
 
-  color: #6b7280;
+.comprovante-footer small {
+  font-size: 8px;
+  font-weight: 700;
 }
 
 
-/* ================================
-   CORPO DO MODAL
-================================ */
-
-.comprovante-modal-body {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+/* =====================================
+   IMPRESSÃO TÉRMICA
+===================================== */
 
 
-/* ================================
-   IMPRESSÃO
-================================ */
 
-@media print {
+/* =====================================
+   IMPRESSÃO TÉRMICA - PAPEL 55 MM
+===================================== */
 
-  @page {
-    size: 80mm auto;
-    margin: 0;
-  }
-
-  body * {
-    visibility: hidden;
-  }
-
-  .comprovante-overlay,
-  .comprovante-modal,
-  .comprovante-modal-body,
-  .comprovante {
-    visibility: visible;
-  }
-
-  .comprovante-overlay {
-    position: absolute;
-
-    inset: 0;
-
-    padding: 0;
-
-    background: transparent;
-  }
-
-  .comprovante-modal {
-    width: 80mm;
-    max-width: 80mm;
-    max-height: none;
-
-    box-shadow: none;
-    border-radius: 0;
-  }
-
-  .comprovante-modal-header,
-  .comprovante-modal-footer {
-    display: none;
-  }
-
-  .comprovante-modal-body {
-    padding: 0;
-
-    overflow: visible;
-
-    background: #ffffff;
-  }
-
-  .comprovante {
-    width: 80mm;
-    max-width: 80mm;
-
-    margin: 0;
-    padding: 5mm;
-
-    box-shadow: none;
-  }
-}

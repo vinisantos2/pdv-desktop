@@ -15,6 +15,12 @@
       ]
     },
     "fs:default",
-    "fs:allow-download-write"
+    "fs:allow-download-write",
+    "printer:default",
+    "printer:printing",
+    "store:default",
+    "thermal-printer:allow-list-thermal-printers",
+    "thermal-printer:allow-print-thermal-printer",
+    "thermal-printer:allow-test-thermal-printer"
   ]
 }

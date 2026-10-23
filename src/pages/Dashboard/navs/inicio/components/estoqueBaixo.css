@@ -38,6 +38,7 @@
 .estoque-lista {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .estoque-item {

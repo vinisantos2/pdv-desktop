@@ -20,6 +20,8 @@ import SobreApp from "../pages/Dashboard/configuracoes/sobre/Sobre";
 
 import RotaPrivada from "./RotaPrivada";
 import PaginaNaoEncontrada from "../pages/PaginaNaoEncontrada";
+import Impressora from "../pages/Dashboard/configuracoes/impressora/Impressora";
+import Plano from "../pages/Dashboard/configuracoes/plano/Plano";
 
 export default function Rotas() {
   return (
@@ -118,12 +120,17 @@ export default function Rotas() {
               path={ROTAS.DASHBOARD.CONFIGURACOES.USUARIOS}
               element={<Usuarios />}
             />
+            {/* iMPRESSORA */}
+            <Route
+              path={ROTAS.DASHBOARD.CONFIGURACOES.IMPRESSORA}
+              element={<Impressora />}
+            />
 
             {/* PLANO */}
-            {/* <Route
+            <Route
               path={ROTAS.DASHBOARD.CONFIGURACOES.PLANO}
               element={<Plano />}
-            /> */}
+            />
 
           </Route>
 
